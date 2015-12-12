@@ -11,7 +11,7 @@ public class TaskManager : MonoBehaviour {
 	
 	void SortListByPriority(){
 		if (taskList.Count > 0){
-			taskList = taskList.OrderBy(x => x.Priority).Reverse().ToList();
+			taskList = taskList.OrderBy(x => x.Priority ).ThenBy(x=>x.TaskID).Reverse().ToList();
 		}
 	}
 	
