@@ -4,10 +4,10 @@ using System.Collections;
 public class WorkerManager : MonoBehaviour {
     WorkerViewController worker;
 
-
+    ComplexTask ct;
     void Awake()
     {
-        worker = gameObject.GetComponent<WorkerViewController>();
+        worker = GameObject.FindObjectOfType<WorkerViewController>().GetComponent<WorkerViewController>();
     }
 
 
@@ -15,7 +15,8 @@ public class WorkerManager : MonoBehaviour {
     {
         if (target.tag == "Plant")
         {
-            Plant plant = gameObject.GetComponent<Plant>();
+            Plant plant = target.GetComponent<PlantViewController>().plant;
+            Debug.Log(plant);
 
             if (plant.WorkedToday == false)
             {
@@ -24,14 +25,29 @@ public class WorkerManager : MonoBehaviour {
                     case Plant.PlantGrowthState.Ripe:
                         break;
                     default:
-                        ComplexTask ct = new ComplexTask();
+                        ct = new ComplexTask()
+                        {
+                            Priority = 3,
+                            TaskID = 009,
+                            ThisGameObject = worker.gameObject
+                        };
+                        Debug.Log(ct);
 
-                        ct.ComplexTaskList.Add(new MoveTask
+                        ct.ComplexTaskList.Add(new MoveTask()
                         {
                             Priority = 1,
-                            TaskID = 1,
-                            Agent = worker.nav,
-                            DestinationPosition = gameObject.transform.position
+                            TaskID = 002,
+                            ThisGameObject = worker.gameObject,
+                            Agent = worker.GetComponent<NavMeshAgent>(),
+                            DestinationPosition = target.transform.position
+                        });
+                        ct.ComplexTaskList.Add(new TendTask()
+                        {
+                            Priority = 2,
+                            TaskID = 002,
+                            ThisGameObject = worker.gameObject,
+                            Worker = worker,
+                            WorkPlant = plant
                         });
 
                         worker.AddTask(ct);
@@ -39,6 +55,18 @@ public class WorkerManager : MonoBehaviour {
                 }
             }
         }
+        else
+        {
+            worker.AddTask(new MoveTask()
+            {
+                Priority = 3,
+                TaskID = 002,
+                ThisGameObject = worker.gameObject,
+                Agent = worker.GetComponent<NavMeshAgent>(),
+                DestinationPosition = target.transform.position
+            });
+        }
+        
     }
 
 

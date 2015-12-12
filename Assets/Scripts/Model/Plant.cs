@@ -30,12 +30,17 @@ public class Plant {
     {
         Health -= amt;
     }
+    public void AddHealth(int amt)
+    {
+        Health += amt;
+
+    }
 
 
     public void Progress()
     {
         CurrentGrowth += Health * GrowthRate;
-
+        Debug.Log(CurrentGrowth);
         if (CurrentGrowth >= 100)
         {
             CurrentGrowth = 0;
@@ -44,6 +49,7 @@ public class Plant {
                 GrowthState += 1;
             }
         }
+        DamageHealth(10);
     }
 
 

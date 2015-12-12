@@ -4,7 +4,7 @@ using System.Collections;
 public class WorkerViewController : MonoBehaviour {
 	TaskManager taskManager;
 	public NavMeshAgent nav { get; protected set; }
-    public float energy;
+    public float energy = 100;
 
 	// Use this for initialization
 	void Awake () {

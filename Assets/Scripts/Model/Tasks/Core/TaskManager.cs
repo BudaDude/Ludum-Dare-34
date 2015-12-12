@@ -27,7 +27,12 @@ public class TaskManager : MonoBehaviour {
 				else {
 					Debug.Log ("TaskManager - Task finished, removing!");
 					taskList.RemoveAt(0);
-				}
+
+                    if (taskList.Count > 1)
+                    {
+                        SortListByPriority();
+                    }
+                }
 			}
 			else {
 				taskList[0].Initialise();
@@ -40,9 +45,7 @@ public class TaskManager : MonoBehaviour {
 	}
 	
 	void Update(){
-		if (taskList.Count > 1){
-			SortListByPriority();
-		}
+
 		if (taskList.Count > 0){
 			ProcessList();
 		}

@@ -3,13 +3,14 @@ using System.Collections;
 
 public class PlantViewController : MonoBehaviour {
 
-    private Plant plant = new Carrot();
+    public Plant plant { get; private set; }
 
     public SkinnedMeshRenderer meshRend;
 
 	// Use this for initialization
 	void Start () {
-        InvokeRepeating("Grow", 2.0f, 5);
+        plant = new Carrot();
+        Invoke("Grow", 2.0f);
 	}
 
     public void Grow()

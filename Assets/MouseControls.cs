@@ -65,12 +65,10 @@ public class MouseControls : MonoBehaviour {
 			RaycastHit hit;
 
 			if (Physics.Raycast(ray, out hit)){
-                ClickHandler click = hit.collider.gameObject.GetComponent<ClickHandler>();
+                Debug.Log(hit.collider.name);
 
-                if (click != null)
-                {
-                    workMan.AssignTask(hit.collider.gameObject);
-                }
+                workMan.AssignTask(hit.collider.gameObject);
+
                 
 
                 targetMan.MoveTarget(hit.point);

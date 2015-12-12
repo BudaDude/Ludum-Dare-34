@@ -11,7 +11,7 @@ public class TargetManager : MonoBehaviour {
 
     public void MoveTarget(Vector3 pos)
     {
-        target.transform.position = new Vector3(Mathf.Ceil(pos.x), 0, Mathf.Ceil(pos.z)) ;
+        target.transform.position = new Vector3(Mathf.Round(pos.x), 0, Mathf.Round(pos.z)) ;
     }
 	
 	// Update is called once per frame
