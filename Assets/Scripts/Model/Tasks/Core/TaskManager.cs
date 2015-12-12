@@ -11,9 +11,14 @@ public class TaskManager : MonoBehaviour {
 	
 	void SortListByPriority(){
 		if (taskList.Count > 0){
-			taskList = taskList.OrderBy(x => x.Priority ).ThenBy(x=>x.TaskID).Reverse().ToList();
+			taskList = taskList.OrderBy(x => -x.Priority ).ThenBy(x=>x.TaskID).ToList();
 		}
 	}
+
+    public void AddTask(Task task)
+    {
+
+    }
 	
 	void ProcessList(){
 		//IF this Task decides it is invalid, then delete it.

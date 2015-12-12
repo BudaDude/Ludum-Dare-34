@@ -28,7 +28,6 @@ public class WorkerManager : MonoBehaviour {
                         ct = new ComplexTask()
                         {
                             Priority = 3,
-                            TaskID = 009,
                             ThisGameObject = worker.gameObject
                         };
                         Debug.Log(ct);
@@ -36,7 +35,6 @@ public class WorkerManager : MonoBehaviour {
                         ct.ComplexTaskList.Add(new MoveTask()
                         {
                             Priority = 1,
-                            TaskID = 002,
                             ThisGameObject = worker.gameObject,
                             Agent = worker.GetComponent<NavMeshAgent>(),
                             DestinationPosition = target.transform.position
@@ -44,7 +42,6 @@ public class WorkerManager : MonoBehaviour {
                         ct.ComplexTaskList.Add(new TendTask()
                         {
                             Priority = 2,
-                            TaskID = 002,
                             ThisGameObject = worker.gameObject,
                             Worker = worker,
                             WorkPlant = plant
@@ -60,7 +57,6 @@ public class WorkerManager : MonoBehaviour {
             worker.AddTask(new MoveTask()
             {
                 Priority = 3,
-                TaskID = 002,
                 ThisGameObject = worker.gameObject,
                 Agent = worker.GetComponent<NavMeshAgent>(),
                 DestinationPosition = target.transform.position

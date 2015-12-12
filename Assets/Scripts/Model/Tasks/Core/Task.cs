@@ -3,15 +3,18 @@ using System.Collections;
 
 
 public abstract class Task {
-	//Returns true if the conditions declared by the Task are met.
-	public abstract bool Valid { get; }
+
+    private static int instanceCounter;
+
+    //Returns true if the conditions declared by the Task are met.
+    public abstract bool Valid { get; }
 	
 	//Returns true if the Task has had Initialise() called.
 	public bool Initialised { get; set; }
 	
 	//Used for sorting Tasks.
 	public int Priority { get; set; }
-	public int TaskID { get; set; }
+	public int TaskID { get; private set; }
 	
 	//Reference to the GameObject that is using this Task. Required!
 	public GameObject ThisGameObject { get; set; }
@@ -19,6 +22,8 @@ public abstract class Task {
 	//Constructor.
 	public Task(){
 		Initialised = false;
+        this.TaskID = ++instanceCounter;
+        Debug.Log(TaskID);
 	}
 	
 	//To be called before Execute or the Task will (probably) fail, depending on whether the task needs to initialise at all.
