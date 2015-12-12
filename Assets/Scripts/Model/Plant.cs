@@ -4,6 +4,7 @@ using System.Collections;
 public class Plant {
     public enum PlantGrowthState { Seedling, Vegetative, Budding, Ripe }
 
+    public bool WorkedToday;
 
     public virtual string InspectorName
     {
@@ -34,6 +35,15 @@ public class Plant {
     public void Progress()
     {
         CurrentGrowth += Health * GrowthRate;
+
+        if (CurrentGrowth >= 100)
+        {
+            CurrentGrowth = 0;
+            if (GrowthState != PlantGrowthState.Ripe)
+            {
+                GrowthState += 1;
+            }
+        }
     }
 
 

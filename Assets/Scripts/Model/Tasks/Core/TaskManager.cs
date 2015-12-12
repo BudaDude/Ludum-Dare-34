@@ -5,11 +5,9 @@ using System.Linq;
 
 
 public class TaskManager : MonoBehaviour {
-	public List<Task> taskList;
+	public List<Task> taskList = new List<Task>();
 	
-	void Awake(){
-		taskList = new List<Task>();
-	}
+
 	
 	void SortListByPriority(){
 		if (taskList.Count > 0){

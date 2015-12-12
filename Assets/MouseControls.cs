@@ -4,7 +4,6 @@ using UnityEngine.EventSystems;
 
 public class MouseControls : MonoBehaviour {
 
-	WorkerViewController worker;
     public int boundary = 50;
     public float panSpeed = 5;
 
@@ -14,10 +13,12 @@ public class MouseControls : MonoBehaviour {
 
     TargetManager targetMan;
 
+    WorkerManager workMan;
+
 
 	// Use this for initialization
 	void Start () {
-		worker = GameObject.FindObjectOfType<WorkerViewController> ().GetComponent<WorkerViewController> ();
+        workMan = GameObject.FindObjectOfType<WorkerManager>().GetComponent<WorkerManager>();
         camera = Camera.main;
         screenHeight = camera.pixelHeight;
         screenWidth = camera.pixelWidth;
@@ -64,7 +65,14 @@ public class MouseControls : MonoBehaviour {
 			RaycastHit hit;
 
 			if (Physics.Raycast(ray, out hit)){
-				worker.MoveTo(hit.point);
+                ClickHandler click = hit.collider.gameObject.GetComponent<ClickHandler>();
+
+                if (click != null)
+                {
+                    workMan.AssignTask(hit.collider.gameObject);
+                }
+                
+
                 targetMan.MoveTarget(hit.point);
 			}
 		}
