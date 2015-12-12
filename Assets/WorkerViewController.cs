@@ -4,6 +4,7 @@ using System.Collections;
 public class WorkerViewController : MonoBehaviour {
 	TaskManager taskManager;
 	NavMeshAgent nav;
+    public float energy;
 
 	// Use this for initialization
 	void Start () {
