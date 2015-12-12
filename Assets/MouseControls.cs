@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.EventSystems;
 
 public class MouseControls : MonoBehaviour {
 
@@ -32,25 +33,29 @@ public class MouseControls : MonoBehaviour {
         //
 
         //horizantol
-        if (Input.mousePosition.x > screenWidth - boundary)
-        {
-            camerPos.x += panSpeed * Time.deltaTime;
-        }
-        if (Input.mousePosition.x < boundary)
-        {
-            camerPos.x -= panSpeed * Time.deltaTime; 
-        }
-        //Vertical
-        if (Input.mousePosition.y > screenHeight - boundary)
-        {
-            camerPos.z += panSpeed * Time.deltaTime; // move on +Z axis
-        }
-        if (Input.mousePosition.y < 0 + boundary)
-        {
-            camerPos.z -= panSpeed * Time.deltaTime; // move on -Z axis
-        }
 
-        camera.transform.position = camerPos;
+        if (!EventSystem.current.IsPointerOverGameObject())
+        {
+            if (Input.mousePosition.x > screenWidth - boundary)
+            {
+                camerPos.x += panSpeed * Time.deltaTime;
+            }
+            if (Input.mousePosition.x < boundary)
+            {
+                camerPos.x -= panSpeed * Time.deltaTime;
+            }
+            //Vertical
+            if (Input.mousePosition.y > screenHeight - boundary)
+            {
+                camerPos.z += panSpeed * Time.deltaTime; // move on +Z axis
+            }
+            if (Input.mousePosition.y < 0 + boundary)
+            {
+                camerPos.z -= panSpeed * Time.deltaTime; // move on -Z axis
+            }
+
+            camera.transform.position = camerPos;
+        }
 
 
 
