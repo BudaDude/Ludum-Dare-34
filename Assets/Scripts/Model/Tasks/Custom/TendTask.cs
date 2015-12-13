@@ -39,6 +39,7 @@ public class TendTask : Task
         {
             if (!SetupCheck() || Worker.energy <= 0)
             {
+                Anim.SetBool("Working", false);
                 return false;
             }
             else
@@ -57,7 +58,7 @@ public class TendTask : Task
     public override void Execute()
     {
         workAmount += Time.deltaTime;
-        Anim.SetTrigger("Working");
+        Anim.SetBool("Working",true);
         if (workAmount >= workRequired)
         {
             WorkPlant.AddHealth(1);
@@ -85,6 +86,7 @@ public class TendTask : Task
     {
         if (WorkisDone())
         {
+            Anim.SetBool("Working", false);
             return true;
         }
         else return false;

@@ -46,7 +46,7 @@ public class MoveTask : Task {
 	//Execute() needs to be called in update of the TaskManager. Setting the destination doesn't need to be done in each update,
 	//but might need to change later to check for updates to the destination. As it is, this Task will only move to a fixed point.
 	public override void Execute(){
-        Anim.SetTrigger("Walking");
+        Anim.SetBool("Walking",true);
 	}
 	
 	bool HasReachedDestination(){
@@ -74,7 +74,8 @@ public class MoveTask : Task {
 	//itself another Task when needed.
 	public override bool Finished(){
 		if (HasReachedDestination()){
-			return true;
+            Anim.SetBool("Walking", false);
+            return true;
 		}
 		else return false;
 	}
