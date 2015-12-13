@@ -60,7 +60,8 @@ public class WorkerManager : MonoBehaviour {
                 Priority = 3,
                 ThisGameObject = worker.gameObject,
                 Agent = worker.GetComponent<NavMeshAgent>(),
-                DestinationPosition = target.transform.position
+                DestinationPosition = target.transform.position,
+                Anim = worker.GetComponent<Animator>()
             });
         }
         
