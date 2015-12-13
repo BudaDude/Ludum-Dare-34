@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class MouseControls : MonoBehaviour {
 
@@ -10,6 +11,8 @@ public class MouseControls : MonoBehaviour {
     private int screenWidth;
     private int screenHeight;
     private Camera camera;
+
+    public GameObject actionMenuObject;
 
     TargetManager targetMan;
 
@@ -68,12 +71,12 @@ public class MouseControls : MonoBehaviour {
 			Ray ray = Camera.main.ScreenPointToRay(mousePos);
 			RaycastHit hit;
 
+            //actionMenuObject.GetComponent<RectTransform>().position = mousePos;
+            //actionMenuObject.SetActive(!actionMenuObject.active);
+
 			if (Physics.Raycast(ray, out hit)){
 
                 workMan.AssignTask(hit.collider.gameObject);
-
-                
-
                 GameObject go = targetMan.GetPooledTarget();
                 go.transform.position = hit.collider.transform.position;
                 go.SetActive(true);

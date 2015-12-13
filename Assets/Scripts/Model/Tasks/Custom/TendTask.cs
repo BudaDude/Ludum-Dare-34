@@ -8,6 +8,7 @@ public class TendTask : Task
     public Plant WorkPlant;
 
     public WorkerViewController Worker;
+    public Animator Anim;
 
     float workAmount;
     float workRequired = .5f;
@@ -20,7 +21,7 @@ public class TendTask : Task
     //Called to check if the task has been setup correctly, returns true if everything seems right.
     private bool SetupCheck()
     {
-        if (WorkPlant == null || Priority == 0 || TaskID == 0 || ThisGameObject == null|| Worker == null)
+        if (WorkPlant == null || Priority == 0 || TaskID == 0 || ThisGameObject == null|| Worker == null || Anim == null)
         {
             Debug.LogWarning("TendTask - Task was not setup correctly!");
             return false;
@@ -56,7 +57,7 @@ public class TendTask : Task
     public override void Execute()
     {
         workAmount += Time.deltaTime;
-
+        Anim.SetTrigger("Working");
         if (workAmount >= workRequired)
         {
             WorkPlant.AddHealth(1);

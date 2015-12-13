@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: d0d446ac1a3f246489608513688d0ba5
-timeCreated: 1449981323
+guid: 45eaae61fecd66342b5cbe503333ea80
+timeCreated: 1449986282
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -134,9 +134,11 @@ ModelImporter:
     400124: UpperArm.L
     400126: UpperArm.R
     4300000: Cube
-    7400000: Skeleton|Idle
-    7400002: Skeleton|Sleepy
-    7400004: Skeleton|Walking
+    7400000: Skeleton|Faint
+    7400002: Skeleton|Idle
+    7400004: Skeleton|Planting
+    7400006: Skeleton|Sleepy
+    7400008: Skeleton|Walking
     9500000: //RootNode
     13700000: Cube
   materials:
@@ -160,8 +162,316 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
+      name: Skeleton|Faint
+      takeName: Skeleton|Faint
+      firstFrame: 0
+      lastFrame: 49
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Skeleton
+        weight: 1
+      - path: Skeleton/ArmIK.L
+        weight: 1
+      - path: Skeleton/ArmIK.L/ArmIK.L_end
+        weight: 1
+      - path: Skeleton/ArmIK.R
+        weight: 1
+      - path: Skeleton/ArmIK.R/ArmIK.R_end
+        weight: 1
+      - path: Skeleton/ArmPoleTarget.L
+        weight: 1
+      - path: Skeleton/ArmPoleTarget.L/ArmPoleTarget.L_end
+        weight: 1
+      - path: Skeleton/ArmPoleTarget.R
+        weight: 1
+      - path: Skeleton/ArmPoleTarget.R/ArmPoleTarget.R_end
+        weight: 1
+      - path: Skeleton/FingersIK.L
+        weight: 1
+      - path: Skeleton/FingersIK.L/FingersIK.L_end
+        weight: 1
+      - path: Skeleton/FingersIK.R
+        weight: 1
+      - path: Skeleton/FingersIK.R/FingersIK.R_end
+        weight: 1
+      - path: Skeleton/HandPoleTarget.L
+        weight: 1
+      - path: Skeleton/HandPoleTarget.L/HandPoleTarget.L_end
+        weight: 1
+      - path: Skeleton/HandPoleTarget.R
+        weight: 1
+      - path: Skeleton/HandPoleTarget.R/HandPoleTarget.R_end
+        weight: 1
+      - path: Skeleton/Hips
+        weight: 1
+      - path: Skeleton/Hips/Chest
+        weight: 1
+      - path: Skeleton/Hips/Chest/Neck
+        weight: 1
+      - path: Skeleton/Hips/Chest/Neck/Head
+        weight: 1
+      - path: Skeleton/Hips/Chest/Neck/Head/Ponytail1
+        weight: 1
+      - path: Skeleton/Hips/Chest/Neck/Head/Ponytail1/Hair.IK
+        weight: 1
+      - path: Skeleton/Hips/Chest/Neck/Head/Ponytail1/Hair.IK/Hair.IK_end
+        weight: 1
+      - path: Skeleton/Hips/Chest/Neck/Head/Ponytail1/PonyTail2
+        weight: 1
+      - path: Skeleton/Hips/Chest/Neck/Head/Ponytail1/PonyTail2/Ponytail3
+        weight: 1
+      - path: Skeleton/Hips/Chest/Neck/Head/Ponytail1/PonyTail2/Ponytail3/Ponytail4
+        weight: 1
+      - path: Skeleton/Hips/Chest/Neck/Head/Ponytail1/PonyTail2/Ponytail3/Ponytail4/Ponytail4_end
+        weight: 1
+      - path: Skeleton/Hips/Chest/UpperArm.L
+        weight: 1
+      - path: Skeleton/Hips/Chest/UpperArm.L/Forearm.L
+        weight: 1
+      - path: Skeleton/Hips/Chest/UpperArm.L/Forearm.L/Hand.L
+        weight: 1
+      - path: Skeleton/Hips/Chest/UpperArm.L/Forearm.L/Hand.L/Fingers.L
+        weight: 1
+      - path: Skeleton/Hips/Chest/UpperArm.L/Forearm.L/Hand.L/Fingers.L/Fingers.L_end
+        weight: 1
+      - path: Skeleton/Hips/Chest/UpperArm.L/Forearm.L/Hand.L/ThumbBase.L
+        weight: 1
+      - path: Skeleton/Hips/Chest/UpperArm.L/Forearm.L/Hand.L/ThumbBase.L/Thumb.L
+        weight: 1
+      - path: Skeleton/Hips/Chest/UpperArm.L/Forearm.L/Hand.L/ThumbBase.L/Thumb.L/Thumb.L_end
+        weight: 1
+      - path: Skeleton/Hips/Chest/UpperArm.R
+        weight: 1
+      - path: Skeleton/Hips/Chest/UpperArm.R/Forearm.R
+        weight: 1
+      - path: Skeleton/Hips/Chest/UpperArm.R/Forearm.R/Hand.R
+        weight: 1
+      - path: Skeleton/Hips/Chest/UpperArm.R/Forearm.R/Hand.R/Fingers.R
+        weight: 1
+      - path: Skeleton/Hips/Chest/UpperArm.R/Forearm.R/Hand.R/Fingers.R/Fingers.R_end
+        weight: 1
+      - path: Skeleton/Hips/Chest/UpperArm.R/Forearm.R/Hand.R/ThumbBase.R
+        weight: 1
+      - path: Skeleton/Hips/Chest/UpperArm.R/Forearm.R/Hand.R/ThumbBase.R/Thumb.R
+        weight: 1
+      - path: Skeleton/Hips/Chest/UpperArm.R/Forearm.R/Hand.R/ThumbBase.R/Thumb.R/Thumb.R_end
+        weight: 1
+      - path: Skeleton/Hips/Thigh.L
+        weight: 1
+      - path: Skeleton/Hips/Thigh.L/Shin.L
+        weight: 1
+      - path: Skeleton/Hips/Thigh.L/Shin.L/Foot.L
+        weight: 1
+      - path: Skeleton/Hips/Thigh.L/Shin.L/Foot.L/Toes.L
+        weight: 1
+      - path: Skeleton/Hips/Thigh.L/Shin.L/Foot.L/Toes.L/Toes.L_end
+        weight: 1
+      - path: Skeleton/Hips/Thigh.R
+        weight: 1
+      - path: Skeleton/Hips/Thigh.R/Shin.R
+        weight: 1
+      - path: Skeleton/Hips/Thigh.R/Shin.R/Foot.R
+        weight: 1
+      - path: Skeleton/Hips/Thigh.R/Shin.R/Foot.R/Toes.R
+        weight: 1
+      - path: Skeleton/Hips/Thigh.R/Shin.R/Foot.R/Toes.R/Toes.R_end
+        weight: 1
+      - path: Skeleton/LegIK.L
+        weight: 1
+      - path: Skeleton/LegIK.L/LegIK.L_end
+        weight: 1
+      - path: Skeleton/LegIK.R
+        weight: 1
+      - path: Skeleton/LegIK.R/LegIK.R_end
+        weight: 1
+      - path: Skeleton/LegPoleTarget.L
+        weight: 1
+      - path: Skeleton/LegPoleTarget.L/LegPoleTarget.L_end
+        weight: 1
+      - path: Skeleton/LegPoleTarget.R
+        weight: 1
+      - path: Skeleton/LegPoleTarget.R/LegPoleTarget.R_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
       name: Skeleton|Idle
       takeName: Skeleton|Idle
+      firstFrame: 0
+      lastFrame: 59
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Skeleton
+        weight: 1
+      - path: Skeleton/ArmIK.L
+        weight: 1
+      - path: Skeleton/ArmIK.L/ArmIK.L_end
+        weight: 1
+      - path: Skeleton/ArmIK.R
+        weight: 1
+      - path: Skeleton/ArmIK.R/ArmIK.R_end
+        weight: 1
+      - path: Skeleton/ArmPoleTarget.L
+        weight: 1
+      - path: Skeleton/ArmPoleTarget.L/ArmPoleTarget.L_end
+        weight: 1
+      - path: Skeleton/ArmPoleTarget.R
+        weight: 1
+      - path: Skeleton/ArmPoleTarget.R/ArmPoleTarget.R_end
+        weight: 1
+      - path: Skeleton/FingersIK.L
+        weight: 1
+      - path: Skeleton/FingersIK.L/FingersIK.L_end
+        weight: 1
+      - path: Skeleton/FingersIK.R
+        weight: 1
+      - path: Skeleton/FingersIK.R/FingersIK.R_end
+        weight: 1
+      - path: Skeleton/HandPoleTarget.L
+        weight: 1
+      - path: Skeleton/HandPoleTarget.L/HandPoleTarget.L_end
+        weight: 1
+      - path: Skeleton/HandPoleTarget.R
+        weight: 1
+      - path: Skeleton/HandPoleTarget.R/HandPoleTarget.R_end
+        weight: 1
+      - path: Skeleton/Hips
+        weight: 1
+      - path: Skeleton/Hips/Chest
+        weight: 1
+      - path: Skeleton/Hips/Chest/Neck
+        weight: 1
+      - path: Skeleton/Hips/Chest/Neck/Head
+        weight: 1
+      - path: Skeleton/Hips/Chest/Neck/Head/Ponytail1
+        weight: 1
+      - path: Skeleton/Hips/Chest/Neck/Head/Ponytail1/Hair.IK
+        weight: 1
+      - path: Skeleton/Hips/Chest/Neck/Head/Ponytail1/Hair.IK/Hair.IK_end
+        weight: 1
+      - path: Skeleton/Hips/Chest/Neck/Head/Ponytail1/PonyTail2
+        weight: 1
+      - path: Skeleton/Hips/Chest/Neck/Head/Ponytail1/PonyTail2/Ponytail3
+        weight: 1
+      - path: Skeleton/Hips/Chest/Neck/Head/Ponytail1/PonyTail2/Ponytail3/Ponytail4
+        weight: 1
+      - path: Skeleton/Hips/Chest/Neck/Head/Ponytail1/PonyTail2/Ponytail3/Ponytail4/Ponytail4_end
+        weight: 1
+      - path: Skeleton/Hips/Chest/UpperArm.L
+        weight: 1
+      - path: Skeleton/Hips/Chest/UpperArm.L/Forearm.L
+        weight: 1
+      - path: Skeleton/Hips/Chest/UpperArm.L/Forearm.L/Hand.L
+        weight: 1
+      - path: Skeleton/Hips/Chest/UpperArm.L/Forearm.L/Hand.L/Fingers.L
+        weight: 1
+      - path: Skeleton/Hips/Chest/UpperArm.L/Forearm.L/Hand.L/Fingers.L/Fingers.L_end
+        weight: 1
+      - path: Skeleton/Hips/Chest/UpperArm.L/Forearm.L/Hand.L/ThumbBase.L
+        weight: 1
+      - path: Skeleton/Hips/Chest/UpperArm.L/Forearm.L/Hand.L/ThumbBase.L/Thumb.L
+        weight: 1
+      - path: Skeleton/Hips/Chest/UpperArm.L/Forearm.L/Hand.L/ThumbBase.L/Thumb.L/Thumb.L_end
+        weight: 1
+      - path: Skeleton/Hips/Chest/UpperArm.R
+        weight: 1
+      - path: Skeleton/Hips/Chest/UpperArm.R/Forearm.R
+        weight: 1
+      - path: Skeleton/Hips/Chest/UpperArm.R/Forearm.R/Hand.R
+        weight: 1
+      - path: Skeleton/Hips/Chest/UpperArm.R/Forearm.R/Hand.R/Fingers.R
+        weight: 1
+      - path: Skeleton/Hips/Chest/UpperArm.R/Forearm.R/Hand.R/Fingers.R/Fingers.R_end
+        weight: 1
+      - path: Skeleton/Hips/Chest/UpperArm.R/Forearm.R/Hand.R/ThumbBase.R
+        weight: 1
+      - path: Skeleton/Hips/Chest/UpperArm.R/Forearm.R/Hand.R/ThumbBase.R/Thumb.R
+        weight: 1
+      - path: Skeleton/Hips/Chest/UpperArm.R/Forearm.R/Hand.R/ThumbBase.R/Thumb.R/Thumb.R_end
+        weight: 1
+      - path: Skeleton/Hips/Thigh.L
+        weight: 1
+      - path: Skeleton/Hips/Thigh.L/Shin.L
+        weight: 1
+      - path: Skeleton/Hips/Thigh.L/Shin.L/Foot.L
+        weight: 1
+      - path: Skeleton/Hips/Thigh.L/Shin.L/Foot.L/Toes.L
+        weight: 1
+      - path: Skeleton/Hips/Thigh.L/Shin.L/Foot.L/Toes.L/Toes.L_end
+        weight: 1
+      - path: Skeleton/Hips/Thigh.R
+        weight: 1
+      - path: Skeleton/Hips/Thigh.R/Shin.R
+        weight: 1
+      - path: Skeleton/Hips/Thigh.R/Shin.R/Foot.R
+        weight: 1
+      - path: Skeleton/Hips/Thigh.R/Shin.R/Foot.R/Toes.R
+        weight: 1
+      - path: Skeleton/Hips/Thigh.R/Shin.R/Foot.R/Toes.R/Toes.R_end
+        weight: 1
+      - path: Skeleton/LegIK.L
+        weight: 1
+      - path: Skeleton/LegIK.L/LegIK.L_end
+        weight: 1
+      - path: Skeleton/LegIK.R
+        weight: 1
+      - path: Skeleton/LegIK.R/LegIK.R_end
+        weight: 1
+      - path: Skeleton/LegPoleTarget.L
+        weight: 1
+      - path: Skeleton/LegPoleTarget.L/LegPoleTarget.L_end
+        weight: 1
+      - path: Skeleton/LegPoleTarget.R
+        weight: 1
+      - path: Skeleton/LegPoleTarget.R/LegPoleTarget.R_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Skeleton|Planting
+      takeName: Skeleton|Planting
       firstFrame: 0
       lastFrame: 59
       wrapMode: 0
@@ -317,7 +627,7 @@ ModelImporter:
       name: Skeleton|Sleepy
       takeName: Skeleton|Sleepy
       firstFrame: 0
-      lastFrame: 1
+      lastFrame: 59
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

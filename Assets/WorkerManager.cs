@@ -45,7 +45,8 @@ public class WorkerManager : MonoBehaviour {
                             Priority = 2,
                             ThisGameObject = worker.gameObject,
                             Worker = worker,
-                            WorkPlant = plant
+                            WorkPlant = plant,
+                            Anim = worker.GetComponent<Animator>()
                         });
 
                         worker.AddTask(ct);
