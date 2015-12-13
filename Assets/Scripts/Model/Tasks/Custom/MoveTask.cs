@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System;
 
 public class MoveTask : Task {
 	
@@ -36,8 +37,10 @@ public class MoveTask : Task {
 			}
 		}
 	}
-	//This Tasks implementation of Initilise() simply sets the NavMeshAgents 'DestinationPosition'.
-	public override void Initialise (){
+
+
+    //This Tasks implementation of Initilise() simply sets the NavMeshAgents 'DestinationPosition'.
+    public override void Initialise (){
 		Agent.SetDestination(DestinationPosition);
 		//IMPORTANT that this is now set to true. The TaskManager relies on this variable.
 		Initialised = true;
@@ -73,12 +76,18 @@ public class MoveTask : Task {
 	//its destination because it is blocked or unreachable, possibly need to just set this Task to invalid if the spot is blocked and allow the AI to set
 	//itself another Task when needed.
 	public override bool Finished(){
-		if (HasReachedDestination()){
+		if (HasReachedDestination() || WasCancelled==true) {
             Anim.SetBool("Walking", false);
             return true;
 		}
 		else return false;
 	}
-	
 
+    public override void Cancel()
+    {
+        Anim.SetBool("Walking", false);
+        Agent.Stop();
+        WasCancelled = true;
+        Debug.Log("Movetask Was Cannceled");
+    }
 }

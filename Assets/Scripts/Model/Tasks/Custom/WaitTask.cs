@@ -13,7 +13,7 @@ public class WaitTask : Task {
 	}
 
 	private bool SetupCheck(){
-		if (timeLength == null || Priority == 0 || TaskID == 0 || ThisGameObject == null){
+		if (timeLength == 0 || Priority == 0 || TaskID == 0 || ThisGameObject == null){
 			Debug.LogWarning("WaitTask - Task was not setup correctly!");
 			return false;
 		}
@@ -28,8 +28,10 @@ public class WaitTask : Task {
 
 		}
 	}
-	
-	public override void Initialise ()
+
+
+
+    public override void Initialise ()
 	{
 
 		Initialised = true;
@@ -37,7 +39,14 @@ public class WaitTask : Task {
 	}
 	
 	public override bool Finished (){
-		return (timeElapsed >= timeLength);
+		if (timeElapsed >= timeLength || this.WasCancelled==true)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
 	}
 	
 	//Execute() needs to be called in update of the TaskManager.
@@ -45,4 +54,9 @@ public class WaitTask : Task {
 			timeElapsed += Time.deltaTime;
 
 	}
+
+    public override void Cancel()
+    {
+        this.WasCancelled = true;
+    }
 }

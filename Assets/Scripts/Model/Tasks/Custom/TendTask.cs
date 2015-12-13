@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class TendTask : Task
 {
@@ -48,6 +49,8 @@ public class TendTask : Task
             }
         }
     }
+
+
     //This Tasks implementation of Initilise() simply sets the NavMeshAgents 'DestinationPosition'.
     public override void Initialise()
     {
@@ -84,7 +87,7 @@ public class TendTask : Task
 
     public override bool Finished()
     {
-        if (WorkisDone())
+        if (WorkisDone()|| WasCancelled==true)
         {
             Anim.SetBool("Working", false);
             return true;
@@ -92,5 +95,8 @@ public class TendTask : Task
         else return false;
     }
 
-
+    public override void Cancel()
+    {
+        WasCancelled = true;
+    }
 }

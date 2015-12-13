@@ -3,10 +3,12 @@ using System.Collections;
 
 public class WorkerManager : MonoBehaviour {
     WorkerViewController worker;
+    TargetManager targetMan;
 
     ComplexTask ct;
     void Awake()
     {
+        targetMan = GameObject.FindObjectOfType<TargetManager>().GetComponent<TargetManager>();
         worker = GameObject.FindObjectOfType<WorkerViewController>().GetComponent<WorkerViewController>();
     }
 
@@ -50,20 +52,32 @@ public class WorkerManager : MonoBehaviour {
                         });
 
                         worker.AddTask(ct);
+                        GameObject go = targetMan.GetPooledTarget();
+                        go.transform.position = target.transform.position;
+                        go.SetActive(true);
+                        go.GetComponent<Target>().associatedTask = ct;
+
                         break;
                 }
             }
         }
         else
         {
-            worker.AddTask(new MoveTask()
+            MoveTask mt = new MoveTask()
             {
                 Priority = 3,
                 ThisGameObject = worker.gameObject,
                 Agent = worker.GetComponent<NavMeshAgent>(),
                 DestinationPosition = target.transform.position,
                 Anim = worker.GetComponent<Animator>()
-            });
+            };
+
+            worker.AddTask(mt);
+            GameObject go = targetMan.GetPooledTarget();
+            go.transform.position = target.transform.position;
+            go.SetActive(true);
+            go.GetComponent<Target>().associatedTask = mt;
+
         }
         
     }

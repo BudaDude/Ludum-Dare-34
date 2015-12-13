@@ -15,17 +15,20 @@ public class TaskManager : MonoBehaviour {
 		}
 	}
 
-    public void AddTask(Task task)
+    public void CancelTask()
     {
-
+        taskList[0].Cancel();
     }
-	
-	void ProcessList(){
-		//IF this Task decides it is invalid, then delete it.
+    public void CancelTask(Task task)
+    {
+        task.Cancel();
+    }
+
+    void ProcessList(){
 		if (taskList[0].Valid){
-			//If its not initialised, intialise it.
+			
 			if (taskList[0].Initialised){
-				//If the task isn't finished, execute it.
+				
 				if (!taskList[0].Finished ()){
 					taskList[0].Execute();                
 				}

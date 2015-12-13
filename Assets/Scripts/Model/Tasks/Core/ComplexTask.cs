@@ -58,14 +58,15 @@ public class ComplexTask : Task {
 			}
 		}
 	}
-	
-	public override void Initialise ()
+
+
+    public override void Initialise ()
 	{
 		Initialised = true;
 	}
 	
 	public override bool Finished (){
-		if (ComplexTaskList.Count <= 0){
+		if (ComplexTaskList.Count <= 0 || WasCancelled==true) {
 			return true;
 		}
 		else {
@@ -77,4 +78,14 @@ public class ComplexTask : Task {
 	public override void Execute(){
 		ProcessComplexTask();
 	}
+
+    public override void Cancel()
+    {
+        foreach (Task t in ComplexTaskList) {
+            t.Cancel();
+        }
+
+        WasCancelled = true;
+    
+    }
 }

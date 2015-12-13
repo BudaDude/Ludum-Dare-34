@@ -76,10 +76,16 @@ public class MouseControls : MonoBehaviour {
 
 			if (Physics.Raycast(ray, out hit)){
 
-                workMan.AssignTask(hit.collider.gameObject);
-                GameObject go = targetMan.GetPooledTarget();
-                go.transform.position = hit.collider.transform.position;
-                go.SetActive(true);
+                if (hit.collider.tag == "Target")
+                {
+                    hit.collider.GetComponent<Target>().associatedTask.Cancel();
+                }
+                else
+                {
+                    workMan.AssignTask(hit.collider.gameObject);
+                }
+
+                
             }
 		}
 	

@@ -5,18 +5,27 @@ public class PlantViewController : MonoBehaviour {
 
     public Plant plant { get; private set; }
 
-    public SkinnedMeshRenderer meshRend;
+    public SkinnedMeshRenderer[] meshRend;
+
+    private SkinnedMeshRenderer currentMesh;
 
 	// Use this for initialization
 	void Start () {
         plant = new Carrot();
-        Invoke("Grow", 2.0f);
 	}
 
     public void Grow()
     {
-        plant.Progress();
-        meshRend.SetBlendShapeWeight((int)plant.GrowthState,100);
+        if (plant != null)
+        {
+            plant.Progress();
+            currentMesh.SetBlendShapeWeight((int)plant.GrowthState, 100);
+        }
+        else
+        {
+            Debug.LogError("No Plant type found when calling the Grow Command");
+        }
+
     }
     
     public void GrowNewPlant(string type)
@@ -25,7 +34,8 @@ public class PlantViewController : MonoBehaviour {
         {
             case "carrot":
                 plant = new Carrot();
-                meshRend.SetBlendShapeWeight(0, 0);
+                currentMesh = meshRend[0];
+                currentMesh.SetBlendShapeWeight(0, 0);
                 break;
             default:
                 Debug.LogError("Plant Name not valid, Cannot create plant");

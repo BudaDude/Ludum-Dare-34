@@ -15,6 +15,8 @@ public abstract class Task {
 	//Used for sorting Tasks.
 	public int Priority { get; set; }
 	public int TaskID { get; private set; }
+
+    public bool WasCancelled { get; protected set; }
 	
 	//Reference to the GameObject that is using this Task. Required!
 	public GameObject ThisGameObject { get; set; }
@@ -22,8 +24,8 @@ public abstract class Task {
 	//Constructor.
 	public Task(){
 		Initialised = false;
+        WasCancelled = false;
         this.TaskID = ++instanceCounter;
-        Debug.Log(TaskID);
 	}
 	
 	//To be called before Execute or the Task will (probably) fail, depending on whether the task needs to initialise at all.
@@ -31,8 +33,10 @@ public abstract class Task {
 	
 	//Allows the TaskManager to check if a task has finished, each task defines it's own rules as to what finished means.
 	public abstract bool Finished();
-	
-	//Execute() needs to be called in update of the TaskManager. This will probably hold the majority of the game logic for a task.
-	public abstract void Execute();
+
+    public abstract void Cancel();
+
+    //Execute() needs to be called in update of the TaskManager. This will probably hold the majority of the game logic for a task.
+    public abstract void Execute();
 
 }
