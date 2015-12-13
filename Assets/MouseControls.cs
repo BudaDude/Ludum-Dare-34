@@ -71,8 +71,10 @@ public class MouseControls : MonoBehaviour {
 
                 
 
-                targetMan.MoveTarget(hit.point);
-			}
+                GameObject go = targetMan.GetPooledTarget();
+                go.transform.position = new Vector3(hit.point.x,0,hit.point.z);
+                go.SetActive(true);
+            }
 		}
 	
 	}

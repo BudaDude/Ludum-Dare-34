@@ -1,21 +1,66 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class TargetManager : MonoBehaviour {
-    public GameObject target;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
+    public GameObject pooledObject;
+    public int startingPooledAmount = 20;
+    public bool willGrow = true;
 
-    public void MoveTarget(Vector3 pos)
+    List<GameObject> pooledObjects;
+
+    // Use this for initialization
+    void Start()
     {
-        target.transform.position = new Vector3(Mathf.Round(pos.x), 0, Mathf.Round(pos.z)) ;
+        pooledObjects = new List<GameObject>();
+        for (int i = 0; i < startingPooledAmount; i++)
+        {
+            GameObject obj = (GameObject)Instantiate(pooledObject);
+            obj.SetActive(false);
+            pooledObjects.Add(obj);
+        }
     }
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
+    public int totalObjects()
+    {
+        return pooledObjects.Count;
+    }
+
+    public int activeObjects()
+    {
+        int a = 0;
+        foreach (GameObject obj in pooledObjects)
+        {
+            if (obj.activeSelf)
+            {
+                a++;
+            }
+        }
+        return a;
+    }
+
+    public GameObject GetPooledTarget()
+    {
+        for (int i = 0; i < pooledObjects.Count; i++)
+        {
+            if (!pooledObjects[i].activeInHierarchy)
+            {
+                return pooledObjects[i];
+            }
+        }
+        if (willGrow)
+        {
+            GameObject obj = (GameObject)Instantiate(pooledObject);
+            pooledObjects.Add(obj);
+            return obj;
+        }
+        return null;
+    }
+
+
+    void Update()
+    {
+
+    }
 }
