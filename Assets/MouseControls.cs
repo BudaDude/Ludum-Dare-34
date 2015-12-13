@@ -72,7 +72,7 @@ public class MouseControls : MonoBehaviour {
                 
 
                 GameObject go = targetMan.GetPooledTarget();
-                go.transform.position = new Vector3(hit.point.x,0,hit.point.z);
+                go.transform.position = hit.collider.transform.position;
                 go.SetActive(true);
             }
 		}
