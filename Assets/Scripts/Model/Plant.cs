@@ -40,7 +40,6 @@ public class Plant {
     public void Progress()
     {
         CurrentGrowth += Health * GrowthRate;
-        Debug.Log(CurrentGrowth);
         if (CurrentGrowth >= 100)
         {
             CurrentGrowth = 0;

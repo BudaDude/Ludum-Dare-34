@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class Healthbar : MonoBehaviour {
-    private Plant plant;
+    private PlantViewController plantView;
     public Image image;
 
     int oldHealth = 0;
@@ -12,22 +12,31 @@ public class Healthbar : MonoBehaviour {
 
 
     // Use this for initialization
-    void Awake() {
+    void Start() {
 
-        oldHealth = plant.Health;
-        plant = transform.parent.GetComponent<PlantViewController>().plant;
+        
+        plantView = transform.parent.GetComponent<PlantViewController>();
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void Update() {
 
-        newHeath = plant.Health;
+        
 
-        if (plant != null && newHeath != oldHealth)
+        if (plantView.plant != null)
         {
-            Debug.Log("Plant Helath: "+plant.Health / 100f);
-            image.rectTransform.anchorMax = new Vector2(newHeath/ 100f,1);
-            oldHealth = newHeath;
+            newHeath = plantView.plant.Health;
+            if (newHeath != oldHealth)
+            {
+
+                image.rectTransform.anchorMax = new Vector2(newHeath / 100f, 1);
+                oldHealth = newHeath;
+            }
+
+
+        }
+        else
+        {
 
         }
 	

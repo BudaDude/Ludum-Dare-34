@@ -69,7 +69,6 @@ public class MouseControls : MonoBehaviour {
 			RaycastHit hit;
 
 			if (Physics.Raycast(ray, out hit)){
-                Debug.Log(hit.collider.name);
 
                 workMan.AssignTask(hit.collider.gameObject);
 
