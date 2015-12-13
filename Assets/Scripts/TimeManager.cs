@@ -12,7 +12,6 @@ public class TimeManager : MonoBehaviour {
         foreach (PlantViewController plant in GameObject.FindObjectsOfType<PlantViewController>())
         {
             plant.Grow();
-            plant.plant.WorkedToday = false;
         }
         foreach (WorkerViewController worker in GameObject.FindObjectsOfType<WorkerViewController>())
         {

@@ -71,18 +71,39 @@ public class MouseControls : MonoBehaviour {
 			Ray ray = Camera.main.ScreenPointToRay(mousePos);
 			RaycastHit hit;
 
-            //actionMenuObject.GetComponent<RectTransform>().position = mousePos;
-            //actionMenuObject.SetActive(!actionMenuObject.active);
+            actionMenuObject.SetActive(false);
 
-			if (Physics.Raycast(ray, out hit)){
+            if (Physics.Raycast(ray, out hit)){
 
                 if (hit.collider.tag == "Target")
                 {
+
                     hit.collider.GetComponent<Target>().associatedTask.Cancel();
+                }
+                else if (hit.collider.tag == "Plant")
+                {
+                    Debug.Log("THIS IS HAPPENING");
+                    if (hit.collider.gameObject.GetComponent<PlantViewController>().plant == null)
+                    {
+
+                        actionMenuObject.GetComponent<RectTransform>().position = mousePos;
+                        actionMenuObject.SetActive(true);
+                        for (int i = 0; i < 1; i++)
+                        {
+                            actionMenuObject.GetComponentsInChildren<Button>()[i].onClick.AddListener(() => workMan.PlantNewPlant(i, hit.collider.gameObject.GetComponent<PlantViewController>()));
+                        }
+                    }
+                    else
+                    {
+                        workMan.AssignTask(hit.collider.gameObject);
+                    }
+
+
                 }
                 else
                 {
                     workMan.AssignTask(hit.collider.gameObject);
+
                 }
 
                 

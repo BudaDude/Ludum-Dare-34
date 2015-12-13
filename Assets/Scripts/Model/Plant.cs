@@ -1,6 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public enum PlantType
+{
+    Carrot,EggPlant
+}
+
+
+
 public class Plant {
     public enum PlantGrowthState { Seedling, Vegetative, Budding, Ripe }
 

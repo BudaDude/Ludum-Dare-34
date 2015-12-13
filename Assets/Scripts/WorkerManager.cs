@@ -13,6 +13,46 @@ public class WorkerManager : MonoBehaviour {
     }
 
 
+    public void PlantNewPlant(int plantType, PlantViewController plantVC)
+    {
+        ct = new ComplexTask()
+        {
+            Priority = 3,
+            ThisGameObject = worker.gameObject
+        };
+        ct.ComplexTaskList.Add(new MoveTask()
+        {
+            Priority = 1,
+            ThisGameObject = worker.gameObject,
+            Agent = worker.GetComponent<NavMeshAgent>(),
+            DestinationPosition = plantVC.transform.position,
+            Anim = worker.GetComponent<Animator>()
+        });
+
+        ct.ComplexTaskList.Add(new PlantTask
+        {
+            Priority = 2,
+            ThisGameObject = worker.gameObject,
+            Worker = worker,
+            Anim = worker.GetComponent<Animator>(),
+            PlantToGrow = (PlantType)plantType,
+            WorkPlant = plantVC
+
+        });
+
+
+        worker.AddTask(ct);
+
+        GameObject go = targetMan.GetPooledTarget();
+        go.transform.position = plantVC.transform.position;
+        go.GetComponent<Target>().associatedTask = ct;
+        go.SetActive(true);
+
+
+
+    }
+
+
     public void AssignTask(GameObject target)
     {
         if (target.tag == "Plant")

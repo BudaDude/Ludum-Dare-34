@@ -72,7 +72,6 @@ public class TaskManager : MonoBehaviour {
 			ProcessList();
 		}
 		else {
-			Debug.Log ("TaskManager - TaskList is empty!");
 		}
 	}
 	

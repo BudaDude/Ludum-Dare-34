@@ -14,7 +14,6 @@ public class MoveTask : Task {
 	public MoveTask(){
 		Initialised = false;
         WasCancelled = false;
-        Debug.Log(WasCancelled);
 	}
 	
 	//Called to check if the task has been setup correctly, returns true if everything seems right.
