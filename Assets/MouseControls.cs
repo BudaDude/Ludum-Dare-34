@@ -40,19 +40,23 @@ public class MouseControls : MonoBehaviour {
             if (Input.mousePosition.x > screenWidth - boundary)
             {
                 camerPos.x += panSpeed * Time.deltaTime;
+                camerPos.x = Mathf.Clamp(camerPos.x, -25, 25);
             }
             if (Input.mousePosition.x < boundary)
             {
                 camerPos.x -= panSpeed * Time.deltaTime;
+                camerPos.x = Mathf.Clamp(camerPos.x, -25, 25);
             }
             //Vertical
             if (Input.mousePosition.y > screenHeight - boundary)
             {
                 camerPos.z += panSpeed * Time.deltaTime; // move on +Z axis
+                camerPos.z = Mathf.Clamp(camerPos.z, -25, 25);
             }
             if (Input.mousePosition.y < 0 + boundary)
             {
                 camerPos.z -= panSpeed * Time.deltaTime; // move on -Z axis
+                camerPos.z = Mathf.Clamp(camerPos.z, -25, 25);
             }
 
             camera.transform.position = camerPos;

@@ -3,13 +3,16 @@ using System.Collections;
 
 public class FaceTheCamera : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
+    private Camera camera;
+
+    void Awake()
+    {
+        camera = Camera.main;
+    }
+
 	
 	// Update is called once per frame
 	void Update () {
-	
+        transform.LookAt(transform.position + Vector3.forward, camera.transform.rotation * Vector3.up);
 	}
 }
