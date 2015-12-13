@@ -71,12 +71,14 @@ public class WorkerManager : MonoBehaviour {
                 DestinationPosition = target.transform.position,
                 Anim = worker.GetComponent<Animator>()
             };
-
             worker.AddTask(mt);
+
             GameObject go = targetMan.GetPooledTarget();
             go.transform.position = target.transform.position;
-            go.SetActive(true);
             go.GetComponent<Target>().associatedTask = mt;
+            go.SetActive(true);
+            
+
 
         }
         

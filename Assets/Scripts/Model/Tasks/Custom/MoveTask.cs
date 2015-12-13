@@ -13,6 +13,8 @@ public class MoveTask : Task {
 	//Constructor
 	public MoveTask(){
 		Initialised = false;
+        WasCancelled = false;
+        Debug.Log(WasCancelled);
 	}
 	
 	//Called to check if the task has been setup correctly, returns true if everything seems right.
@@ -29,7 +31,8 @@ public class MoveTask : Task {
 	//This tasks implementation of Valid() simply relays the output of the function SetupCheck() waste of a call right now but maybe useful for later Tasks?
 	public override bool Valid{
 		get {
-			if (!SetupCheck()){
+			if (!SetupCheck())
+            {
 				return false;
 			}
 			else {
@@ -54,7 +57,7 @@ public class MoveTask : Task {
 	
 	bool HasReachedDestination(){
 		//IMPORTANT! If the agent is still calculating its route then leave it alone or program flow will be fucked.
-		if (!Agent.pathPending){
+		if (Agent.hasPath){
 			//If the path is NOT complete or totally invalid, return false.
 			if (Agent.pathStatus == NavMeshPathStatus.PathInvalid || Agent.pathStatus == NavMeshPathStatus.PathPartial){
 				Debug.Log ("MoveTask - Destination Un-Reachable!");
@@ -62,9 +65,11 @@ public class MoveTask : Task {
 				return true;
 			}
 			//If the path is complete (valid) and it is within 0.1f of the target then return true.
-			if (Agent.pathStatus == NavMeshPathStatus.PathComplete && Agent.remainingDistance < 0.2f){
-				Debug.Log ("MoveTask - Destination Reached!");
-				return true;
+			if (Agent.pathStatus == NavMeshPathStatus.PathComplete && Agent.remainingDistance < 0.1f){
+				Debug.Log ("MoveTask - Destination Reached! with a remaining distance of "+Agent.remainingDistance);
+                Agent.Stop();
+                Agent.ResetPath();
+                return true;
 			}
 			return false;
 		}
@@ -78,6 +83,7 @@ public class MoveTask : Task {
 	public override bool Finished(){
 		if (HasReachedDestination() || WasCancelled==true) {
             Anim.SetBool("Walking", false);
+            
             return true;
 		}
 		else return false;
@@ -85,9 +91,14 @@ public class MoveTask : Task {
 
     public override void Cancel()
     {
-        Anim.SetBool("Walking", false);
-        Agent.Stop();
+        
+        if (Initialised)
+        {
+            Anim.SetBool("Walking", false);
+            Agent.ResetPath();
+            
+        }
         WasCancelled = true;
-        Debug.Log("Movetask Was Cannceled");
+
     }
 }

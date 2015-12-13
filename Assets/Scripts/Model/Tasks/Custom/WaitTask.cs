@@ -39,7 +39,7 @@ public class WaitTask : Task {
 	}
 	
 	public override bool Finished (){
-		if (timeElapsed >= timeLength || this.WasCancelled==true)
+		if (timeElapsed >= timeLength || WasCancelled == true)
         {
             return true;
         }
@@ -57,6 +57,6 @@ public class WaitTask : Task {
 
     public override void Cancel()
     {
-        this.WasCancelled = true;
+        WasCancelled = true;
     }
 }

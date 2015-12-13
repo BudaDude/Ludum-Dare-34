@@ -25,31 +25,45 @@ public class TaskManager : MonoBehaviour {
     }
 
     void ProcessList(){
-		if (taskList[0].Valid){
-			
-			if (taskList[0].Initialised){
-				
-				if (!taskList[0].Finished ()){
-					taskList[0].Execute();                
-				}
-				else {
-					Debug.Log ("TaskManager - Task finished, removing!");
-					taskList.RemoveAt(0);
+            if (taskList[0].Valid)
+            {
+            if (!taskList[0].WasCancelled)
+            {
+                if (taskList[0].Initialised)
+                {
 
-                    if (taskList.Count > 1)
+                    if (!taskList[0].Finished())
                     {
-                        SortListByPriority();
+                        taskList[0].Execute();
+                    }
+                    else
+                    {
+                        Debug.Log("TaskManager - Task finished, removing!");
+                        taskList.RemoveAt(0);
+
+                        if (taskList.Count > 1)
+                        {
+                            SortListByPriority();
+                        }
                     }
                 }
-			}
-			else {
-				taskList[0].Initialise();
-			}
-		}
-		else {
-			Debug.LogWarning ("TaskManager - Invalid Task detected, removing!");
-			taskList.RemoveAt(0);
-		}
+                else
+                {
+                    taskList[0].Initialise();
+                }
+            }
+            else
+            {
+                Debug.LogWarning("TaskManager - Task Cancelled. Removing");
+                taskList.RemoveAt(0);
+
+            }
+        }
+        else
+        {
+            Debug.LogWarning("TaskManager - Invalid Task detected, removing!");
+            taskList.RemoveAt(0);
+        }
 	}
 	
 	void Update(){

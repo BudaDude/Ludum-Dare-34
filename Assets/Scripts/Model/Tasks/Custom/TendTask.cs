@@ -38,7 +38,7 @@ public class TendTask : Task
     {
         get
         {
-            if (!SetupCheck() || Worker.energy <= 0)
+            if (!SetupCheck() || Worker.energy <= 0 || WasCancelled==true)
             {
                 Anim.SetBool("Working", false);
                 return false;
