@@ -7,6 +7,7 @@ public class MoveTask : Task {
 	public Vector3 DestinationPosition { get; set; }
 	//Agent reference.
 	public NavMeshAgent Agent;
+    public Animator Anim;
 	
 	//Constructor
 	public MoveTask(){
@@ -15,7 +16,7 @@ public class MoveTask : Task {
 	
 	//Called to check if the task has been setup correctly, returns true if everything seems right.
 	private bool SetupCheck(){
-		if (Agent == null || Priority == 0 || TaskID == 0 || ThisGameObject == null){
+		if (Agent == null || Priority == 0 || TaskID == 0 || ThisGameObject == null || Anim == null){
 			Debug.LogWarning("MoveTask - Task was not setup correctly!");
 			return false;
 		}
@@ -45,7 +46,7 @@ public class MoveTask : Task {
 	//Execute() needs to be called in update of the TaskManager. Setting the destination doesn't need to be done in each update,
 	//but might need to change later to check for updates to the destination. As it is, this Task will only move to a fixed point.
 	public override void Execute(){
-		//Debug.Log (Agent.remainingDistance);
+        Anim.SetTrigger("Walking");
 	}
 	
 	bool HasReachedDestination(){

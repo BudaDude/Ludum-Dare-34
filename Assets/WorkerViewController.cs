@@ -1,9 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
+using UnityEngine.UI;
 
+[System.Serializable]
 public class WorkerViewController : MonoBehaviour {
 	TaskManager taskManager;
 	public NavMeshAgent nav { get; protected set; }
+    [SerializeField]
+    public Text energyDisplay;
     public float energy = 100;
 
 	// Use this for initialization
@@ -11,6 +16,11 @@ public class WorkerViewController : MonoBehaviour {
 		nav = GetComponent<NavMeshAgent> ();
 		taskManager = GetComponent<TaskManager> ();
 	}
+
+    public float GetEnergy()
+    {
+        return energy;
+    }
 
     public void EndDay()
     {
@@ -24,5 +34,6 @@ public class WorkerViewController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        energyDisplay.text = "Energy: "+energy;
 	}
 }
