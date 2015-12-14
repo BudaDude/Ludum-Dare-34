@@ -53,7 +53,7 @@ public class WorkerViewController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        energyDisplay.text = "Energy: "+energy;
+        energyDisplay.text = "Energy: "+(int)energy;
 
 
         if (energy <= 0 && !hasFainted)
