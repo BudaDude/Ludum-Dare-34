@@ -66,9 +66,15 @@ public class MouseControls : MonoBehaviour {
             }
 
             camera.transform.position = camerPos;
+
+            if (Input.GetMouseButton(0))
+            {
+                actionMenuObject.SetActive(false);
+            }
         }
 
 
+      
 
         if (Input.GetMouseButtonUp (1)) {
 			Ray ray = Camera.main.ScreenPointToRay(mousePos);
