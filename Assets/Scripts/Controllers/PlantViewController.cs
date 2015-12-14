@@ -41,14 +41,14 @@ public class PlantViewController : MonoBehaviour {
                 plant = new Carrot();
                 currentMesh = meshRend[0];
                 currentMesh.gameObject.SetActive(true);
-                currentMesh.SetBlendShapeWeight(0, 0);
+                currentMesh.SetBlendShapeWeight(0, 100);
                 healthBar.SetActive(true);
                 break;
             case PlantType.EggPlant:
                 plant = new EggPlant();
                 currentMesh = meshRend[1];
                 currentMesh.gameObject.SetActive(true);
-                currentMesh.SetBlendShapeWeight(0, 0);
+                currentMesh.SetBlendShapeWeight(0, 100);
                 healthBar.SetActive(true);
 
                 break;
