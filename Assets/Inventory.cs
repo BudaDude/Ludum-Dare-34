@@ -19,11 +19,16 @@ public class Inventory : MonoBehaviour {
     public Text carrotSeedsText;
     public Text eggplantSeedsText;
 
+    public bool doubleSpeedFert;
+    
+
 
     void Start()
     {
         money = 10;
     }
+
+
 
     public void RemoveSeed(int id)
     {

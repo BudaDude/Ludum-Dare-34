@@ -27,7 +27,17 @@ public class PlantViewController : MonoBehaviour {
         {
             
             currentMesh.SetBlendShapeWeight((int)plant.GrowthState, 0);
+
             plant.Progress();
+            if (inventory.doubleSpeedFert)
+            {
+
+                plant.AddHealth(10);
+                plant.Progress();
+
+            }
+
+
             if (plant.Health > 0) {
                 Debug.Log(plant.Health);
                 currentMesh.SetBlendShapeWeight((int)plant.GrowthState, 100);
