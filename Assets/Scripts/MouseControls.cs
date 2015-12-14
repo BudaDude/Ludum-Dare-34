@@ -12,6 +12,8 @@ public class MouseControls : MonoBehaviour {
     private int screenHeight;
     private Camera camera;
 
+    Inventory inventory;
+
     public GameObject actionMenuObject;
 
     TargetManager targetMan;
@@ -21,6 +23,7 @@ public class MouseControls : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        inventory = FindObjectOfType<Inventory>();
         workMan = GameObject.FindObjectOfType<WorkerManager>().GetComponent<WorkerManager>();
         camera = Camera.main;
         screenHeight = camera.pixelHeight;
@@ -93,6 +96,9 @@ public class MouseControls : MonoBehaviour {
 
                         button1.onClick.RemoveAllListeners();
                         button2.onClick.RemoveAllListeners();
+                        button1.interactable = (inventory.carrotSeeds > 0);
+                        button2.interactable = (inventory.eggplantSeeds > 0);
+
 
 
                         button1.onClick.AddListener(() => workMan.PlantNewPlant(0, hit.collider.gameObject.GetComponent<PlantViewController>()));

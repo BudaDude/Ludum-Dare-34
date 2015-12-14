@@ -22,15 +22,41 @@ public class StoreManager : MonoBehaviour {
 
     public void Buy(int id)
     {
-
+        if (id == 0)
+        {
+            inventory.carrotSeeds++;
+            inventory.money -= carrotSeedBuyPrice;
+        }
+        else
+        {
+            inventory.eggplantSeeds++;
+            inventory.money -= eggplantSeedBuyPrice;
+        }
     }
+    public void Sell(int id)
+    {
+        if (id == 0)
+        {
+            inventory.carrotAmount--;
+            inventory.money += carrotSellPrice;
+        }
+        else
+        {
+            inventory.eggplantAmount--;
+            inventory.money += eggPlantSellPrice;
+        }
+    }
+
 
     void Update()
     {
 
 
-        buyCarrotSeedsButton.interactable = (inventory.money < carrotSeedBuyPrice);
-        buyCarrotSeedsButton.interactable = (inventory.money < carrotSeedBuyPrice);
+        buyCarrotSeedsButton.interactable = (inventory.money >= carrotSeedBuyPrice);
+        buyEggplantSeedsButton.interactable = (inventory.money >= eggplantSeedBuyPrice);
+
+        sellCarrotButton.interactable = (inventory.carrotAmount > 0);
+        sellEggplantButton.interactable = (inventory.eggplantAmount > 0);
 
 
     }

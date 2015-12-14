@@ -53,13 +53,13 @@ public class PlantViewController : MonoBehaviour {
             {
                 if (plant.Type == PlantType.Carrot)
                 {
-                    inventory.carrotAmount += Random.Range(1,8);
+                    inventory.carrotAmount += 1;
                     
 
                 }
                 else
                 {
-                    inventory.eggplantAmount += Random.Range(1, 8);
+                    inventory.eggplantAmount += 2;
                 }
                 currentMesh.gameObject.SetActive(false);
                 plant = null;
@@ -78,6 +78,7 @@ public class PlantViewController : MonoBehaviour {
                 currentMesh.gameObject.SetActive(true);
                 currentMesh.SetBlendShapeWeight(0, 100);
                 healthBar.SetActive(true);
+                inventory.carrotSeeds--;
                 break;
             case PlantType.EggPlant:
                 plant = new EggPlant();
@@ -85,6 +86,7 @@ public class PlantViewController : MonoBehaviour {
                 currentMesh.gameObject.SetActive(true);
                 currentMesh.SetBlendShapeWeight(0, 100);
                 healthBar.SetActive(true);
+                inventory.eggplantSeeds--;
 
                 break;
             default:
