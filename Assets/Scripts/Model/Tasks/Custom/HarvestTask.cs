@@ -68,7 +68,7 @@ public class HarvestTask : Task
     bool WorkisDone()
     {
         Anim.SetBool("Working", true);
-        if (harvestingProgress < 8)
+        if (harvestingProgress < 6)
         {
             harvestingProgress += Time.deltaTime;
 

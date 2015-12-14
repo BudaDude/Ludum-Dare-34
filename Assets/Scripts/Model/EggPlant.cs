@@ -43,10 +43,10 @@ public class EggPlant : Plant {
 
     public EggPlant()
     {
-        GrowthRate = .80f;
+        GrowthRate = .6f;
         Health = 100;
         InspectorName = "EggPlant";
-        Type = PlantType.Carrot;
+        Type = PlantType.EggPlant;
 
     }
 }
