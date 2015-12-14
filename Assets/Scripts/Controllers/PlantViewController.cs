@@ -9,9 +9,14 @@ public class PlantViewController : MonoBehaviour {
 
     private SkinnedMeshRenderer currentMesh;
 
+    private GameObject healthBar;
+
 	// Use this for initialization
 	void Start () {
-	}
+        healthBar = GetComponentInChildren<Canvas>().gameObject;
+                healthBar.SetActive(false);
+
+    }
 
     public void Grow()
     {
@@ -36,12 +41,15 @@ public class PlantViewController : MonoBehaviour {
                 currentMesh = meshRend[0];
                 currentMesh.gameObject.SetActive(true);
                 currentMesh.SetBlendShapeWeight(0, 100);
+                healthBar.SetActive(true);
                 break;
             case PlantType.EggPlant:
                 plant = new EggPlant();
                 currentMesh = meshRend[1];
                 currentMesh.gameObject.SetActive(true);
                 currentMesh.SetBlendShapeWeight(0, 100);
+                healthBar.SetActive(true);
+
                 break;
             default:
                 Debug.LogError("Plant Name not valid, Cannot create plant");

@@ -1,0 +1,162 @@
+fileFormatVersion: 2
+guid: 5defe28c2a7c695488fe0829b75a9d58
+timeCreated: 1450051996
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: BackFoot.L
+    100002: BackFoot.L_end
+    100004: BackFoot.R
+    100006: BackFoot.R_end
+    100008: BackLeg.L
+    100010: BackLeg.R
+    100012: BackLegIK.L
+    100014: BackLegIK.L_end
+    100016: BackLegIK.R
+    100018: BackLegIK.R_end
+    100020: BackThigh.L
+    100022: BackThigh.R
+    100024: //RootNode
+    100026: Butt.L
+    100028: Cube
+    100030: Ear.L
+    100032: Ear.R
+    100034: EarTip.L
+    100036: EarTip.L_end
+    100038: EarTip.R
+    100040: EarTip.R_end
+    100042: FrontFoot.L
+    100044: FrontFoot.L_end
+    100046: FrontFoot.R
+    100048: FrontFoot.R_end
+    100050: FrontIK.L
+    100052: FrontIK.L_end
+    100054: FrontIK.R
+    100056: FrontIK.R_end
+    100058: FrontLeg.L
+    100060: FrontLeg.R
+    100062: Head
+    100064: LowerFrontLeg.L
+    100066: LowerFrontLeg.R
+    100068: LowerFrontLegIK.L
+    100070: LowerFrontLegIK.L_end
+    100072: LowerFrontLegIK.R
+    100074: LowerFrontLegIK.R_end
+    100076: Neck
+    100078: Skeleton
+    100080: Torso
+    100082: Torso.001
+    100084: Torso.001_end
+    400000: BackFoot.L
+    400002: BackFoot.L_end
+    400004: BackFoot.R
+    400006: BackFoot.R_end
+    400008: BackLeg.L
+    400010: BackLeg.R
+    400012: BackLegIK.L
+    400014: BackLegIK.L_end
+    400016: BackLegIK.R
+    400018: BackLegIK.R_end
+    400020: BackThigh.L
+    400022: BackThigh.R
+    400024: //RootNode
+    400026: Butt.L
+    400028: Cube
+    400030: Ear.L
+    400032: Ear.R
+    400034: EarTip.L
+    400036: EarTip.L_end
+    400038: EarTip.R
+    400040: EarTip.R_end
+    400042: FrontFoot.L
+    400044: FrontFoot.L_end
+    400046: FrontFoot.R
+    400048: FrontFoot.R_end
+    400050: FrontIK.L
+    400052: FrontIK.L_end
+    400054: FrontIK.R
+    400056: FrontIK.R_end
+    400058: FrontLeg.L
+    400060: FrontLeg.R
+    400062: Head
+    400064: LowerFrontLeg.L
+    400066: LowerFrontLeg.R
+    400068: LowerFrontLegIK.L
+    400070: LowerFrontLegIK.L_end
+    400072: LowerFrontLegIK.R
+    400074: LowerFrontLegIK.R_end
+    400076: Neck
+    400078: Skeleton
+    400080: Torso
+    400082: Torso.001
+    400084: Torso.001_end
+    4300000: Cube
+    7400000: Skeleton|Hopping
+    7400002: Skeleton|Idle
+    9500000: //RootNode
+    13700000: Cube
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

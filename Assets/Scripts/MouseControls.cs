@@ -88,10 +88,9 @@ public class MouseControls : MonoBehaviour {
 
                         actionMenuObject.GetComponent<RectTransform>().position = mousePos;
                         actionMenuObject.SetActive(true);
-                        for (int i = 0; i < 1; i++)
-                        {
-                            actionMenuObject.GetComponentsInChildren<Button>()[i].onClick.AddListener(() => workMan.PlantNewPlant(i, hit.collider.gameObject.GetComponent<PlantViewController>()));
-                        }
+                        actionMenuObject.GetComponentsInChildren<Button>()[0].onClick.AddListener(() => workMan.PlantNewPlant(0, hit.collider.gameObject.GetComponent<PlantViewController>()));
+                        actionMenuObject.GetComponentsInChildren<Button>()[1].onClick.AddListener(() => workMan.PlantNewPlant(1, hit.collider.gameObject.GetComponent<PlantViewController>()));
+
                     }
                     else
                     {
