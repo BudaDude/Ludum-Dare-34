@@ -33,6 +33,11 @@ public class Healthbar : MonoBehaviour {
                 oldHealth = newHeath;
             }
 
+            if (newHeath == 100)
+            {
+                plantView.healthBar.SetActive(false);
+            }
+
 
         }
         else

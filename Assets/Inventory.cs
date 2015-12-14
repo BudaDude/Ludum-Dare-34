@@ -8,4 +8,11 @@ public class Inventory : MonoBehaviour {
     public int carrotSeeds;
     public int eggplantSeeds;
 
+    public int money;
+
+    void Start()
+    {
+        money = 10;
+    }
+
 }

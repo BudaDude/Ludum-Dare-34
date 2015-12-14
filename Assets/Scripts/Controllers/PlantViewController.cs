@@ -9,7 +9,7 @@ public class PlantViewController : MonoBehaviour {
 
     private SkinnedMeshRenderer currentMesh;
 
-    private GameObject healthBar;
+    public GameObject healthBar;
 
     private Inventory inventory;
 
@@ -17,7 +17,7 @@ public class PlantViewController : MonoBehaviour {
 	void Start () {
         inventory = GameObject.FindObjectOfType<Inventory>();
         healthBar = GetComponentInChildren<Canvas>().gameObject;
-                healthBar.SetActive(false);
+        healthBar.SetActive(false);
 
     }
 
@@ -32,6 +32,10 @@ public class PlantViewController : MonoBehaviour {
             if (plant.GrowthState == Plant.PlantGrowthState.Ripe)
             {
                 healthBar.SetActive(false);
+            }
+            else
+            {
+                healthBar.SetActive(true);
             }
         }
         else
@@ -95,5 +99,6 @@ public class PlantViewController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+
 	}
 }
