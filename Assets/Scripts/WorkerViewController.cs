@@ -10,11 +10,16 @@ public class WorkerViewController : MonoBehaviour {
     [SerializeField]
     public Text energyDisplay;
     public float energy = 100;
+    private Animator anim;
+
+    private bool hasFainted = false;
 
 	// Use this for initialization
 	void Awake () {
 		nav = GetComponent<NavMeshAgent> ();
 		taskManager = GetComponent<TaskManager> ();
+        anim = GetComponent<Animator>();
+        hasFainted = false;
 	}
 
     public float GetEnergy()
@@ -28,17 +33,30 @@ public class WorkerViewController : MonoBehaviour {
         {
             t.Cancel();
         }
-
+        hasFainted = false;
+        anim.SetBool("HasFainted", false);
         energy = 100;
         transform.position = new Vector3(1, 0, 1);
     }
 
 	public void AddTask(Task task){
-        taskManager.taskList.Add(task);
+        if (!hasFainted)
+        {
+            taskManager.taskList.Add(task);
+        }
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
         energyDisplay.text = "Energy: "+energy;
+
+
+        if (energy <= 0 && !hasFainted)
+        {
+            hasFainted = true;
+            anim.SetBool("HasFainted",true);
+            
+        }
 	}
 }

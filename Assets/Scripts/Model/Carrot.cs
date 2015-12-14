@@ -43,7 +43,7 @@ public class Carrot : Plant {
 
     public Carrot()
     {
-        GrowthRate = .25f;
+        GrowthRate = .7f;
         Health = 100;
         InspectorName = "Carrot";
     }

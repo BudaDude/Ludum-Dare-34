@@ -72,11 +72,13 @@ public class PlantTask : Task {
         if (planttingProgess < 5)
         {
             planttingProgess += Time.deltaTime;
+            
 
             return false;
         }
         else
         {
+            Worker.energy -= 5;
             Debug.Log(PlantToGrow);
             WorkPlant.GrowNewPlant(PlantToGrow);
             return true;
