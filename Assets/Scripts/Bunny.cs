@@ -22,7 +22,9 @@ public class Bunny : MonoBehaviour {
     void Awake()
     {
         runningAway = false;
-        eatTimer = 0; 
+        eatTimer = 0;
+        plantTarget = null;
+        GoToPlant();
     }
 
     void GoToPlant()

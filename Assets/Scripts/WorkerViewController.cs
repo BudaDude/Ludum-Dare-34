@@ -37,7 +37,9 @@ public class WorkerViewController : MonoBehaviour {
         energy = 100;
         hasFainted = false;
         anim.SetBool("HasFainted", false);
- 
+        anim.SetBool("Working", false);
+        anim.SetBool("Walking", false);
+
         transform.position = new Vector3(-18, 0, 0);
         Camera.main.transform.position = new Vector3(-18, 8, -5);
         hasYawned = false;

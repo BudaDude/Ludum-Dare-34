@@ -64,7 +64,7 @@ public class TendTask : Task
         Anim.SetBool("Working",true);
         if (workAmount >= workRequired)
         {
-            WorkPlant.AddHealth(1);
+            WorkPlant.AddHealth(2);
             Worker.energy -= 1;
             workAmount = 0;
         }
