@@ -12,11 +12,13 @@ public class PlantTask : Task {
 
     float planttingProgess = 0;
 
+    private Inventory inventory;
+
     //Constructor
     public PlantTask()
     {
         Initialised = false;
-
+        inventory = GameObject.FindObjectOfType<Inventory>();
     }
 
     //Called to check if the task has been setup correctly, returns true if everything seems right.
@@ -25,6 +27,7 @@ public class PlantTask : Task {
         if (WorkPlant == null || Priority == 0 || TaskID == 0 || ThisGameObject == null || Worker == null || Anim == null || PlantToGrow == null)
         {
             Debug.LogWarning("TendTask - Task was not setup correctly!");
+            inventory.AddSeed((int)PlantToGrow);
             return false;
         }
         else
@@ -98,6 +101,7 @@ public class PlantTask : Task {
 
     public override void Cancel()
     {
+        inventory.AddSeed((int)PlantToGrow);
         Anim.SetBool("Working", false);
         WasCancelled = true;
     }

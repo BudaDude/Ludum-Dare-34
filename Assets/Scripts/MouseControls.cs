@@ -102,9 +102,12 @@ public class MouseControls : MonoBehaviour {
 
 
                         button1.onClick.AddListener(() => workMan.PlantNewPlant(0, hit.collider.gameObject.GetComponent<PlantViewController>()));
+                        button1.onClick.AddListener(() => inventory.RemoveSeed(0));
                         button1.onClick.AddListener(() => button1.transform.parent.gameObject.SetActive(false));
 
                         button2.onClick.AddListener(() => workMan.PlantNewPlant(1, hit.collider.gameObject.GetComponent<PlantViewController>()));
+                        button2.onClick.AddListener(() => inventory.RemoveSeed(1));
+
                         button2.onClick.AddListener(() => button2.transform.parent.gameObject.SetActive(false));
 
 

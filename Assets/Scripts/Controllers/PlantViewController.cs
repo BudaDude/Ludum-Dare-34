@@ -78,7 +78,6 @@ public class PlantViewController : MonoBehaviour {
                 currentMesh.gameObject.SetActive(true);
                 currentMesh.SetBlendShapeWeight(0, 100);
                 healthBar.SetActive(true);
-                inventory.carrotSeeds--;
                 break;
             case PlantType.EggPlant:
                 plant = new EggPlant();
@@ -86,7 +85,6 @@ public class PlantViewController : MonoBehaviour {
                 currentMesh.gameObject.SetActive(true);
                 currentMesh.SetBlendShapeWeight(0, 100);
                 healthBar.SetActive(true);
-                inventory.eggplantSeeds--;
 
                 break;
             default:

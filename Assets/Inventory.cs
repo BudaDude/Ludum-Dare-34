@@ -25,6 +25,30 @@ public class Inventory : MonoBehaviour {
         money = 10;
     }
 
+    public void RemoveSeed(int id)
+    {
+        if (id == 0)
+        {
+            carrotSeeds--;
+        }
+        else
+        {
+            eggplantSeeds--;
+        }
+    }
+
+    public void AddSeed(int id)
+    {
+        if (id == 0)
+        {
+            carrotSeeds++;
+        }
+        else
+        {
+            eggplantSeeds++;
+        }
+    }
+
     void Update()
     {
         moneyText.text = "$" + money;
