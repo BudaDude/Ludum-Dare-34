@@ -56,7 +56,12 @@ public class WorkerViewController : MonoBehaviour {
         {
             hasFainted = true;
             anim.SetBool("HasFainted",true);
-            
+
+            foreach (Task t in taskManager.taskList)
+            {
+                t.Cancel();
+            }
+
         }
 	}
 }

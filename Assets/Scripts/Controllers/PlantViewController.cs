@@ -22,6 +22,7 @@ public class PlantViewController : MonoBehaviour {
     {
         if (plant != null)
         {
+            currentMesh.SetBlendShapeWeight((int)plant.GrowthState, 0);
             plant.Progress();
             currentMesh.SetBlendShapeWeight((int)plant.GrowthState, 100);
         }
@@ -40,14 +41,14 @@ public class PlantViewController : MonoBehaviour {
                 plant = new Carrot();
                 currentMesh = meshRend[0];
                 currentMesh.gameObject.SetActive(true);
-                currentMesh.SetBlendShapeWeight(0, 100);
+                currentMesh.SetBlendShapeWeight(0, 0);
                 healthBar.SetActive(true);
                 break;
             case PlantType.EggPlant:
                 plant = new EggPlant();
                 currentMesh = meshRend[1];
                 currentMesh.gameObject.SetActive(true);
-                currentMesh.SetBlendShapeWeight(0, 100);
+                currentMesh.SetBlendShapeWeight(0, 0);
                 healthBar.SetActive(true);
 
                 break;
