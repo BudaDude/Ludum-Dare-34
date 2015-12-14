@@ -24,6 +24,11 @@ public class WorkerViewController : MonoBehaviour {
 
     public void EndDay()
     {
+        foreach(Task t in taskManager.taskList)
+        {
+            t.Cancel();
+        }
+
         energy = 100;
         transform.position = new Vector3(1, 0, 1);
     }

@@ -23,7 +23,7 @@ public class WorkerManager : MonoBehaviour {
         ct.ComplexTaskList.Add(new MoveTask()
         {
             Priority = 1,
-            ThisGameObject = worker.gameObject,
+            ThisGameObject = gameObject,
             Agent = worker.GetComponent<NavMeshAgent>(),
             DestinationPosition = plantVC.transform.position,
             Anim = worker.GetComponent<Animator>()
@@ -32,7 +32,7 @@ public class WorkerManager : MonoBehaviour {
         ct.ComplexTaskList.Add(new PlantTask
         {
             Priority = 2,
-            ThisGameObject = worker.gameObject,
+            ThisGameObject = gameObject,
             Worker = worker,
             Anim = worker.GetComponent<Animator>(),
             PlantToGrow = (PlantType)plantType,

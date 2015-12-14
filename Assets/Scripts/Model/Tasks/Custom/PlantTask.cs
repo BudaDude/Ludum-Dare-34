@@ -86,7 +86,7 @@ public class PlantTask : Task {
 
     public override bool Finished()
     {
-        if (WorkisDone())
+        if (WorkisDone()|| WasCancelled)
         {
             Anim.SetBool("Working", false);
             return true;
@@ -96,6 +96,7 @@ public class PlantTask : Task {
 
     public override void Cancel()
     {
+        Anim.SetBool("Working", false);
         WasCancelled = true;
     }
 
