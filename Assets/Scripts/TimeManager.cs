@@ -6,6 +6,8 @@ public class TimeManager : MonoBehaviour {
 
     public int day = 0;
 
+    public Bunny[] bunnies;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -33,6 +35,15 @@ public class TimeManager : MonoBehaviour {
         }
         day++;
         fadeScreenObject.GetComponent<Animator>().SetBool("FadedToBlack", false);
+
+        if (Random.value <= .20f)
+        {
+            bunnies[Random.Range(0, bunnies.Length)].gameObject.SetActive(true);
+            bunnies[Random.Range(0, bunnies.Length)].gameObject.SetActive(true);
+            bunnies[Random.Range(0, bunnies.Length)].gameObject.SetActive(true);
+        }
+
+
         yield return new WaitForSeconds(1);
         fadeScreenObject.SetActive(false);
         
