@@ -1,17 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class TimeManager : MonoBehaviour {
     public GameObject fadeScreenObject;
 
     public int day = 0;
 
+    public Text timeText;
+
     public Bunny[] bunnies;
 
 	// Use this for initialization
 	void Start () {
-	
-	}
+
+        timeText.text = "Day: " + day;
+    }
 
 
     public void EndDay()
@@ -34,6 +38,7 @@ public class TimeManager : MonoBehaviour {
             worker.EndDay();
         }
         day++;
+        timeText.text = "Day: " + day;
         fadeScreenObject.GetComponent<Animator>().SetBool("FadedToBlack", false);
 
         if (Random.value <= .20f)

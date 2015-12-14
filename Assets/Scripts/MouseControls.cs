@@ -85,7 +85,6 @@ public class MouseControls : MonoBehaviour {
                 }
                 else if (hit.collider.tag == "Plant")
                 {
-                    Debug.Log("THIS IS HAPPENING");
                     if (hit.collider.gameObject.GetComponent<PlantViewController>().plant == null)
                     {
 

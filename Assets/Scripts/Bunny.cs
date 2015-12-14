@@ -32,6 +32,7 @@ public class Bunny : MonoBehaviour {
             if (plantvc.plant != null)
             {
                 plantTarget = plantvc;
+                anim.SetBool("Moving", true);
                 agent.SetDestination(plantTarget.transform.position);
                 break;
             }
@@ -40,6 +41,7 @@ public class Bunny : MonoBehaviour {
 
     void RunAway()
     {
+        anim.SetBool("Moving", true);
         agent.ResetPath();
         Debug.Log("RUN AWEAY");
         agent.SetDestination(new Vector3(10,0,30));
@@ -48,6 +50,7 @@ public class Bunny : MonoBehaviour {
 
     void NomPlant()
     {
+        anim.SetBool("Moving", false);
         eatTimer += Time.deltaTime;
         if (eatTimer > 1.5)
         {

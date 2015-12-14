@@ -115,7 +115,231 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Skeleton|Hopping
+      takeName: Skeleton|Hopping
+      firstFrame: 0
+      lastFrame: 16
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Skeleton
+        weight: 1
+      - path: Skeleton/BackLegIK.L
+        weight: 1
+      - path: Skeleton/BackLegIK.L/BackLegIK.L_end
+        weight: 1
+      - path: Skeleton/BackLegIK.R
+        weight: 1
+      - path: Skeleton/BackLegIK.R/BackLegIK.R_end
+        weight: 1
+      - path: Skeleton/Butt.L
+        weight: 1
+      - path: Skeleton/Butt.L/BackThigh.L
+        weight: 1
+      - path: Skeleton/Butt.L/BackThigh.L/BackLeg.L
+        weight: 1
+      - path: Skeleton/Butt.L/BackThigh.L/BackLeg.L/BackFoot.L
+        weight: 1
+      - path: Skeleton/Butt.L/BackThigh.L/BackLeg.L/BackFoot.L/BackFoot.L_end
+        weight: 1
+      - path: Skeleton/Butt.L/BackThigh.R
+        weight: 1
+      - path: Skeleton/Butt.L/BackThigh.R/BackLeg.R
+        weight: 1
+      - path: Skeleton/Butt.L/BackThigh.R/BackLeg.R/BackFoot.R
+        weight: 1
+      - path: Skeleton/Butt.L/BackThigh.R/BackLeg.R/BackFoot.R/BackFoot.R_end
+        weight: 1
+      - path: Skeleton/Butt.L/Torso
+        weight: 1
+      - path: Skeleton/Butt.L/Torso/FrontLeg.L
+        weight: 1
+      - path: Skeleton/Butt.L/Torso/FrontLeg.L/LowerFrontLeg.L
+        weight: 1
+      - path: Skeleton/Butt.L/Torso/FrontLeg.L/LowerFrontLeg.L/FrontFoot.L
+        weight: 1
+      - path: Skeleton/Butt.L/Torso/FrontLeg.L/LowerFrontLeg.L/FrontFoot.L/FrontFoot.L_end
+        weight: 1
+      - path: Skeleton/Butt.L/Torso/FrontLeg.R
+        weight: 1
+      - path: Skeleton/Butt.L/Torso/FrontLeg.R/LowerFrontLeg.R
+        weight: 1
+      - path: Skeleton/Butt.L/Torso/FrontLeg.R/LowerFrontLeg.R/FrontFoot.R
+        weight: 1
+      - path: Skeleton/Butt.L/Torso/FrontLeg.R/LowerFrontLeg.R/FrontFoot.R/FrontFoot.R_end
+        weight: 1
+      - path: Skeleton/Butt.L/Torso/Neck
+        weight: 1
+      - path: Skeleton/Butt.L/Torso/Neck/Head
+        weight: 1
+      - path: Skeleton/Butt.L/Torso/Neck/Head/Ear.L
+        weight: 1
+      - path: Skeleton/Butt.L/Torso/Neck/Head/Ear.L/EarTip.L
+        weight: 1
+      - path: Skeleton/Butt.L/Torso/Neck/Head/Ear.L/EarTip.L/EarTip.L_end
+        weight: 1
+      - path: Skeleton/Butt.L/Torso/Neck/Head/Ear.R
+        weight: 1
+      - path: Skeleton/Butt.L/Torso/Neck/Head/Ear.R/EarTip.R
+        weight: 1
+      - path: Skeleton/Butt.L/Torso/Neck/Head/Ear.R/EarTip.R/EarTip.R_end
+        weight: 1
+      - path: Skeleton/FrontIK.L
+        weight: 1
+      - path: Skeleton/FrontIK.L/FrontIK.L_end
+        weight: 1
+      - path: Skeleton/FrontIK.R
+        weight: 1
+      - path: Skeleton/FrontIK.R/FrontIK.R_end
+        weight: 1
+      - path: Skeleton/LowerFrontLegIK.L
+        weight: 1
+      - path: Skeleton/LowerFrontLegIK.L/LowerFrontLegIK.L_end
+        weight: 1
+      - path: Skeleton/LowerFrontLegIK.R
+        weight: 1
+      - path: Skeleton/LowerFrontLegIK.R/LowerFrontLegIK.R_end
+        weight: 1
+      - path: Skeleton/Torso.001
+        weight: 1
+      - path: Skeleton/Torso.001/Torso.001_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Skeleton|Idle
+      takeName: Skeleton|Idle
+      firstFrame: 0
+      lastFrame: 16
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Skeleton
+        weight: 1
+      - path: Skeleton/BackLegIK.L
+        weight: 1
+      - path: Skeleton/BackLegIK.L/BackLegIK.L_end
+        weight: 1
+      - path: Skeleton/BackLegIK.R
+        weight: 1
+      - path: Skeleton/BackLegIK.R/BackLegIK.R_end
+        weight: 1
+      - path: Skeleton/Butt.L
+        weight: 1
+      - path: Skeleton/Butt.L/BackThigh.L
+        weight: 1
+      - path: Skeleton/Butt.L/BackThigh.L/BackLeg.L
+        weight: 1
+      - path: Skeleton/Butt.L/BackThigh.L/BackLeg.L/BackFoot.L
+        weight: 1
+      - path: Skeleton/Butt.L/BackThigh.L/BackLeg.L/BackFoot.L/BackFoot.L_end
+        weight: 1
+      - path: Skeleton/Butt.L/BackThigh.R
+        weight: 1
+      - path: Skeleton/Butt.L/BackThigh.R/BackLeg.R
+        weight: 1
+      - path: Skeleton/Butt.L/BackThigh.R/BackLeg.R/BackFoot.R
+        weight: 1
+      - path: Skeleton/Butt.L/BackThigh.R/BackLeg.R/BackFoot.R/BackFoot.R_end
+        weight: 1
+      - path: Skeleton/Butt.L/Torso
+        weight: 1
+      - path: Skeleton/Butt.L/Torso/FrontLeg.L
+        weight: 1
+      - path: Skeleton/Butt.L/Torso/FrontLeg.L/LowerFrontLeg.L
+        weight: 1
+      - path: Skeleton/Butt.L/Torso/FrontLeg.L/LowerFrontLeg.L/FrontFoot.L
+        weight: 1
+      - path: Skeleton/Butt.L/Torso/FrontLeg.L/LowerFrontLeg.L/FrontFoot.L/FrontFoot.L_end
+        weight: 1
+      - path: Skeleton/Butt.L/Torso/FrontLeg.R
+        weight: 1
+      - path: Skeleton/Butt.L/Torso/FrontLeg.R/LowerFrontLeg.R
+        weight: 1
+      - path: Skeleton/Butt.L/Torso/FrontLeg.R/LowerFrontLeg.R/FrontFoot.R
+        weight: 1
+      - path: Skeleton/Butt.L/Torso/FrontLeg.R/LowerFrontLeg.R/FrontFoot.R/FrontFoot.R_end
+        weight: 1
+      - path: Skeleton/Butt.L/Torso/Neck
+        weight: 1
+      - path: Skeleton/Butt.L/Torso/Neck/Head
+        weight: 1
+      - path: Skeleton/Butt.L/Torso/Neck/Head/Ear.L
+        weight: 1
+      - path: Skeleton/Butt.L/Torso/Neck/Head/Ear.L/EarTip.L
+        weight: 1
+      - path: Skeleton/Butt.L/Torso/Neck/Head/Ear.L/EarTip.L/EarTip.L_end
+        weight: 1
+      - path: Skeleton/Butt.L/Torso/Neck/Head/Ear.R
+        weight: 1
+      - path: Skeleton/Butt.L/Torso/Neck/Head/Ear.R/EarTip.R
+        weight: 1
+      - path: Skeleton/Butt.L/Torso/Neck/Head/Ear.R/EarTip.R/EarTip.R_end
+        weight: 1
+      - path: Skeleton/FrontIK.L
+        weight: 1
+      - path: Skeleton/FrontIK.L/FrontIK.L_end
+        weight: 1
+      - path: Skeleton/FrontIK.R
+        weight: 1
+      - path: Skeleton/FrontIK.R/FrontIK.R_end
+        weight: 1
+      - path: Skeleton/LowerFrontLegIK.L
+        weight: 1
+      - path: Skeleton/LowerFrontLegIK.L/LowerFrontLegIK.L_end
+        weight: 1
+      - path: Skeleton/LowerFrontLegIK.R
+        weight: 1
+      - path: Skeleton/LowerFrontLegIK.R/LowerFrontLegIK.R_end
+        weight: 1
+      - path: Skeleton/Torso.001
+        weight: 1
+      - path: Skeleton/Torso.001/Torso.001_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []

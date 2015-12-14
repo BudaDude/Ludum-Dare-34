@@ -25,9 +25,12 @@ public class PlantViewController : MonoBehaviour {
     {
         if (plant != null)
         {
+            
             currentMesh.SetBlendShapeWeight((int)plant.GrowthState, 0);
             plant.Progress();
-            currentMesh.SetBlendShapeWeight((int)plant.GrowthState, 100);
+            if (plant.Health > 0) {
+                Debug.Log(plant.Health);
+                currentMesh.SetBlendShapeWeight((int)plant.GrowthState, 100);
 
             if (plant.GrowthState == Plant.PlantGrowthState.Ripe)
             {
@@ -36,6 +39,12 @@ public class PlantViewController : MonoBehaviour {
             else
             {
                 healthBar.SetActive(true);
+            }
+            }
+            else
+            {
+                currentMesh.gameObject.SetActive(false);
+                plant = null;
             }
         }
         else
