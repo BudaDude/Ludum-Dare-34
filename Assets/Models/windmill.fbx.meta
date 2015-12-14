@@ -1,29 +1,46 @@
 fileFormatVersion: 2
-guid: a8029bc58e11bae47be518dafab5757f
-timeCreated: 1450060844
+guid: 715888b56ad49ea49ad34f7ac1cc1230
+timeCreated: 1450125686
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
+    100000: Blade
     100002: Shed
     100004: Windmill
-    100006: Blade
-    400000: //RootNode
+    100006: //RootNode
+    400000: Blade
     400002: Shed
     400004: Windmill
-    400006: Blade
-    2300000: //RootNode
+    400006: //RootNode
+    2300000: Blade
     2300002: Shed
     2300004: Windmill
-    2300006: Blade
-    3300000: //RootNode
+    2300006: //RootNode
+    3300000: Blade
     3300002: Shed
     3300004: Windmill
-    3300006: Blade
-    4300000: Windmill
+    3300006: //RootNode
+    4300000: Blade
     4300002: Shed
-    4300004: Blade
+    4300004: Windmill
+    4300006: Cylinder
+    7400000: Blade|BladeAction
+    7400002: Blade|BladeAction.002
+    7400004: Blade|ShedAction
+    7400006: Blade|Spinning
+    7400008: Blade|WindmillAction
+    7400010: Shed|BladeAction
+    7400012: Shed|BladeAction.002
+    7400014: Shed|ShedAction
+    7400016: Shed|Spinning
+    7400018: Shed|WindmillAction
+    7400020: Windmill|BladeAction
+    7400022: Windmill|BladeAction.002
+    7400024: Windmill|ShedAction
+    7400026: Windmill|Spinning
+    7400028: Windmill|WindmillAction
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -82,7 +99,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 44a2645fb76cbaa4cb70baeeba21c4f1
-timeCreated: 1450055663
+guid: e6c0466f43a665d438de0b0c9261e219
+timeCreated: 1450125686
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -9,8 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Barn
-    6400000: //RootNode
+    4300000: Plane
   materials:
     importMaterials: 1
     materialName: 0
@@ -37,7 +36,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
@@ -51,9 +50,9 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 0
+    normalSmoothAngle: 60
     normalImportMode: 0
-    tangentImportMode: 0
+    tangentImportMode: 3
   importAnimation: 1
   copyAvatar: 0
   humanDescription:

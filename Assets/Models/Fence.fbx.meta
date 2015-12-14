@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 57e19dc653bc7254eb293463317207e9
-timeCreated: 1450079325
+guid: 556b63644c85b3a439f64fc1b720ca25
+timeCreated: 1450125685
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -9,7 +9,8 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Plane
+    4300000: Cube
+    4300002: Fence
   materials:
     importMaterials: 1
     materialName: 0

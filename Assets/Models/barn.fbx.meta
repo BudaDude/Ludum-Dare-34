@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 48bf56c901eb7544d90804b3f0200fee
-timeCreated: 1450046495
+guid: f5b9fae7803282447977f1544b5500bd
+timeCreated: 1450125686
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Cube
+    4300000: Barn
   materials:
     importMaterials: 1
     materialName: 0
