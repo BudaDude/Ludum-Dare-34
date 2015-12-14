@@ -4,6 +4,8 @@ using System.Collections;
 public class TimeManager : MonoBehaviour {
     public GameObject fadeScreenObject;
 
+    public int day = 0;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -12,6 +14,7 @@ public class TimeManager : MonoBehaviour {
 
     public void EndDay()
     {
+        
         StartCoroutine(EndTheDay());
     }
 
@@ -28,7 +31,7 @@ public class TimeManager : MonoBehaviour {
         {
             worker.EndDay();
         }
-
+        day++;
         fadeScreenObject.GetComponent<Animator>().SetBool("FadedToBlack", false);
         yield return new WaitForSeconds(1);
         fadeScreenObject.SetActive(false);
