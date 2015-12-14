@@ -88,8 +88,19 @@ public class MouseControls : MonoBehaviour {
 
                         actionMenuObject.GetComponent<RectTransform>().position = mousePos;
                         actionMenuObject.SetActive(true);
-                        actionMenuObject.GetComponentsInChildren<Button>()[0].onClick.AddListener(() => workMan.PlantNewPlant(0, hit.collider.gameObject.GetComponent<PlantViewController>()));
-                        actionMenuObject.GetComponentsInChildren<Button>()[1].onClick.AddListener(() => workMan.PlantNewPlant(1, hit.collider.gameObject.GetComponent<PlantViewController>()));
+                        Button button1 = actionMenuObject.GetComponentsInChildren<Button>()[0];
+                        Button button2 = actionMenuObject.GetComponentsInChildren<Button>()[1];
+
+                        button1.onClick.RemoveAllListeners();
+                        button2.onClick.RemoveAllListeners();
+
+
+                        button1.onClick.AddListener(() => workMan.PlantNewPlant(0, hit.collider.gameObject.GetComponent<PlantViewController>()));
+                        button1.onClick.AddListener(() => button1.transform.parent.gameObject.SetActive(false));
+
+                        button2.onClick.AddListener(() => workMan.PlantNewPlant(1, hit.collider.gameObject.GetComponent<PlantViewController>()));
+                        button2.onClick.AddListener(() => button2.transform.parent.gameObject.SetActive(false));
+
 
                     }
                     else

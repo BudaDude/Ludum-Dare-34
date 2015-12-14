@@ -16,6 +16,7 @@ public class PlantTask : Task {
     public PlantTask()
     {
         Initialised = false;
+
     }
 
     //Called to check if the task has been setup correctly, returns true if everything seems right.
@@ -55,6 +56,7 @@ public class PlantTask : Task {
     {
         //IMPORTANT that this is now set to true. The TaskManager relies on this variable.
         Initialised = true;
+        Debug.Log(ThisGameObject.name);
     }
 
     public override void Execute()
