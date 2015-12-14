@@ -11,8 +11,11 @@ public class PlantViewController : MonoBehaviour {
 
     private GameObject healthBar;
 
+    private Inventory inventory;
+
 	// Use this for initialization
 	void Start () {
+        inventory = GameObject.FindObjectOfType<Inventory>();
         healthBar = GetComponentInChildren<Canvas>().gameObject;
                 healthBar.SetActive(false);
 
@@ -25,12 +28,40 @@ public class PlantViewController : MonoBehaviour {
             currentMesh.SetBlendShapeWeight((int)plant.GrowthState, 0);
             plant.Progress();
             currentMesh.SetBlendShapeWeight((int)plant.GrowthState, 100);
+
+            if (plant.GrowthState == Plant.PlantGrowthState.Ripe)
+            {
+                healthBar.SetActive(false);
+            }
         }
         else
         {
             Debug.LogError("No Plant type found when calling the Grow Command");
         }
 
+    }
+
+    public void Harvest()
+    {
+        if (plant != null)
+        {
+            if (plant.GrowthState == Plant.PlantGrowthState.Ripe)
+            {
+                if (plant.Type == PlantType.Carrot)
+                {
+                    inventory.carrotAmount += Random.Range(1,8);
+                    
+
+                }
+                else
+                {
+                    inventory.eggplantAmount += Random.Range(1, 8);
+                }
+                currentMesh.gameObject.SetActive(false);
+                plant = null;
+            }
+
+        }
     }
     
     public void GrowNewPlant(PlantType type)

@@ -55,16 +55,45 @@ public class WorkerManager : MonoBehaviour {
 
     public void AssignTask(GameObject target)
     {
+        GameObject go = targetMan.GetPooledTarget();
         if (target.tag == "Plant")
         {
             Plant plant = target.GetComponent<PlantViewController>().plant;
             Debug.Log(plant);
 
-            if (plant.WorkedToday == false)
-            {
                 switch (plant.GrowthState)
                 {
+
                     case Plant.PlantGrowthState.Ripe:
+                        ct = new ComplexTask()
+                        {
+                            Priority = 3,
+                            ThisGameObject = worker.gameObject
+                        };
+                        Debug.Log(ct);
+
+                        ct.ComplexTaskList.Add(new MoveTask()
+                        {
+                            Priority = 1,
+                            ThisGameObject = worker.gameObject,
+                            Agent = worker.GetComponent<NavMeshAgent>(),
+                            DestinationPosition = target.transform.position,
+                            Anim = worker.GetComponent<Animator>()
+                        });
+                        ct.ComplexTaskList.Add(new HarvestTask()
+                        {
+                            Priority = 2,
+                            ThisGameObject = worker.gameObject,
+                            Worker = worker,
+                            WorkPlantVC = target.GetComponent<PlantViewController>(),
+                            Anim = worker.GetComponent<Animator>()
+                        });
+
+                        worker.AddTask(ct);
+                       
+                        go.transform.position = target.transform.position;
+                        go.SetActive(true);
+                        go.GetComponent<Target>().associatedTask = ct;
                         break;
                     default:
                         ct = new ComplexTask()
@@ -92,14 +121,13 @@ public class WorkerManager : MonoBehaviour {
                         });
 
                         worker.AddTask(ct);
-                        GameObject go = targetMan.GetPooledTarget();
+
                         go.transform.position = target.transform.position;
                         go.SetActive(true);
                         go.GetComponent<Target>().associatedTask = ct;
 
                         break;
                 }
-            }
         }
         else
         {
@@ -113,7 +141,7 @@ public class WorkerManager : MonoBehaviour {
             };
             worker.AddTask(mt);
 
-            GameObject go = targetMan.GetPooledTarget();
+
             go.transform.position = target.transform.position;
             go.GetComponent<Target>().associatedTask = mt;
             go.SetActive(true);

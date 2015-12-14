@@ -13,9 +13,10 @@ public class WorkerViewController : MonoBehaviour {
     private Animator anim;
 
     private bool hasFainted = false;
+    private bool hasYawned = false;
 
-	// Use this for initialization
-	void Awake () {
+    // Use this for initialization
+    void Awake () {
 		nav = GetComponent<NavMeshAgent> ();
 		taskManager = GetComponent<TaskManager> ();
         anim = GetComponent<Animator>();
@@ -33,10 +34,12 @@ public class WorkerViewController : MonoBehaviour {
         {
             t.Cancel();
         }
+        energy = 100;
         hasFainted = false;
         anim.SetBool("HasFainted", false);
-        energy = 100;
+ 
         transform.position = new Vector3(1, 0, 1);
+        hasYawned = false;
     }
 
 	public void AddTask(Task task){
@@ -63,5 +66,11 @@ public class WorkerViewController : MonoBehaviour {
             }
 
         }
-	}
+
+        if (energy <= 25 && !hasYawned)
+        {
+            anim.SetTrigger("Sleepy");
+            hasYawned = true;
+        }
+    }
 }

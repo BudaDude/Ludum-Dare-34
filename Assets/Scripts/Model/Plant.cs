@@ -11,7 +11,10 @@ public enum PlantType
 public class Plant {
     public enum PlantGrowthState { Seedling, Vegetative, Budding, Ripe }
 
-    public bool WorkedToday;
+    public virtual PlantType Type
+    {
+        get; protected set;
+    }
 
     public virtual string InspectorName
     {

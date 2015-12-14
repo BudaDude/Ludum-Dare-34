@@ -46,6 +46,7 @@ public class Carrot : Plant {
         GrowthRate = .7f;
         Health = 100;
         InspectorName = "Carrot";
+        Type = PlantType.Carrot;
     }
 
 
