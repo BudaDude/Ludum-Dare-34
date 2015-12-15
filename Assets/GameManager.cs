@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (inventory.money >= 500)
+        if (inventory.money >= 200)
         {
             winScreen.SetActive(true);
         }

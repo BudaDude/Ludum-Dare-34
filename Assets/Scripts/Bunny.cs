@@ -13,14 +13,16 @@ public class Bunny : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        agent = GetComponent<NavMeshAgent>();
-        anim = GetComponent<Animator>();
-        worker = FindObjectOfType<WorkerViewController>();
+
 
         
     }
     void Awake()
     {
+        agent = GetComponent<NavMeshAgent>();
+        anim = GetComponent<Animator>();
+        worker = FindObjectOfType<WorkerViewController>();
+
         runningAway = false;
         eatTimer = 0;
         plantTarget = null;
