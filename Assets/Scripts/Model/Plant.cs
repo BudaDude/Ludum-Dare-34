@@ -58,7 +58,7 @@ public class Plant {
                 GrowthState += 1;
             }
         }
-        DamageHealth(10);
+        DamageHealth(20);
     }
 
 

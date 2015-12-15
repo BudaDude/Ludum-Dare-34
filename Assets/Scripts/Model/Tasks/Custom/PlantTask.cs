@@ -59,7 +59,6 @@ public class PlantTask : Task {
     {
         //IMPORTANT that this is now set to true. The TaskManager relies on this variable.
         Initialised = true;
-        Debug.Log(ThisGameObject.name);
     }
 
     public override void Execute()

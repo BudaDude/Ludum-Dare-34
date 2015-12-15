@@ -18,7 +18,6 @@ public class Target : MonoBehaviour {
         {
             if (!taskMan.taskList.Contains(associatedTask) || associatedTask.WasCancelled)
             {
-                Debug.Log("Removing target");
                 associatedTask = null;
                 gameObject.SetActive(false);
             }

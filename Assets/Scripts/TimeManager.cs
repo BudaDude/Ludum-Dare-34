@@ -41,7 +41,7 @@ public class TimeManager : MonoBehaviour {
         timeText.text = "Day: " + day;
         fadeScreenObject.GetComponent<Animator>().SetBool("FadedToBlack", false);
 
-        if (Random.value <= .20f)
+        if (Random.value <= .40f)
         {
             bunnies[Random.Range(0, bunnies.Length)].gameObject.SetActive(true);
             bunnies[Random.Range(0, bunnies.Length)].gameObject.SetActive(true);

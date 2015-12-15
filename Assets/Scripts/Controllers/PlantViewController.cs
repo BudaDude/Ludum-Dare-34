@@ -32,7 +32,7 @@ public class PlantViewController : MonoBehaviour {
             if (inventory.doubleSpeedFert)
             {
 
-                plant.AddHealth(10);
+                plant.AddHealth(20);
                 plant.Progress();
 
             }
@@ -59,7 +59,7 @@ public class PlantViewController : MonoBehaviour {
         }
         else
         {
-            Debug.LogError("No Plant type found when calling the Grow Command");
+
         }
 
     }
